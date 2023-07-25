@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import data from "../../../data/data";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [allData, setAllData] = useState(data);
   console.log(allData);
@@ -12,7 +13,10 @@ const Home = () => {
           {allData.map((item) => (
             <div>
               <img src={item.thumbnail} alt="" className="h-96 w-96" />
-              <button className="btn btn-primary mt-5">Use Templates</button>
+              <Link to={`/resume/${item.id}`}>
+                {" "}
+                <button className="btn btn-primary mt-5">Use Templates</button>
+              </Link>
             </div>
           ))}
         </div>
