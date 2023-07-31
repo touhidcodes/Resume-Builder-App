@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { connect } from "react-redux";
 
 const Form = () => {
+  const [changeData, setChangeData] = useState();
   const {
     register,
     handleSubmit,
@@ -11,11 +13,12 @@ const Form = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    setChangeData(data);
   };
   return (
     <div>
       <h4 className="text-4xl text-center">Name Of CV</h4>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onChange={handleSubmit(onSubmit)}>
         <div>
           <label className="label flex flex-row justify-start">
             <span className=" font-semibold">Job Title:</span>
@@ -64,4 +67,19 @@ const Form = () => {
   );
 };
 
-export default Form;
+// Mapping state from Redux to component props
+const mapStateToProps = (state) => {
+  return {
+    contact: state.contactReducer,
+  };
+};
+
+// Mapping actions from Redux to component props
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setcontact: (contact) => dispatch(setcontact(contact)),
+    updatecontact: (contact) => dispatch(updatecontact(contact)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
