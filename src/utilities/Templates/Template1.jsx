@@ -18,6 +18,9 @@ const Template1 = (props) => {
       <div className="bg-blue-500 text-white">
         Your Name: {getContactData("name")}
       </div>
+      <div className="bg-blue-500 text-white">
+        Your Name: {getContactData("email")}
+      </div>
     </div>
   );
 };
