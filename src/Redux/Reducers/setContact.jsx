@@ -1,5 +1,5 @@
 import initialState from "./initialState.json";
-import { SET_CONTACT, UPDATE_CONTACT } from "../actions/actions";
+import { SET_CONTACT, UPDATE_CONTACT } from "../ActionCreators/ActionCreators";
 
 // Personal Information state Reducer
 const contactReducer = (state = initialState.contact, action) => {
