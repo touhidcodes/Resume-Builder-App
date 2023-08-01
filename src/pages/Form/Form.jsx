@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
+import { setContact, updateContact } from "../../Redux/Actions/setContact";
 
-const Form = () => {
+const Form = (props) => {
   const [changeData, setChangeData] = useState();
   const {
     register,
@@ -12,8 +13,16 @@ const Form = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     setChangeData(data);
+
+    if (props.contact !== null) {
+      // Update
+      props.updateContact(data);
+    } else {
+      // Set
+      props.setContact(data);
+    }
   };
   return (
     <div>
@@ -77,8 +86,8 @@ const mapStateToProps = (state) => {
 // Mapping actions from Redux to component props
 const mapDispatchToProps = (dispatch) => {
   return {
-    setcontact: (contact) => dispatch(setcontact(contact)),
-    updatecontact: (contact) => dispatch(updatecontact(contact)),
+    setContact: (contact) => dispatch(setContact(contact)),
+    updateContact: (contact) => dispatch(updateContact(contact)),
   };
 };
 
