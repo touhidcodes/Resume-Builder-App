@@ -31,23 +31,29 @@ const Form = (props) => {
     const data = {};
   };
 
-  const createDataCollector = () => {
-    const data = {};
+  // return handleInputChange;
 
+  const data = {};
+
+  const handleInputChange = (field, event) => {
+    console.log(field, event.target.value);
+    data[field] = event.target.value;
+    console.log(data);
+  };
+  const createDataCollector = () => {
     // const collectData = (fieldName, value) => {
     //   data[fieldName] = value;
     //   console.log(data);
     // };
-
-    const handleInputChange = (field, event) => {
-      console.log(field, event.target.value);
-      data[field] = event;
-    };
-
-    // return handleInputChange;
+    if (props.contact !== null) {
+      // Update
+      props.updateContact(data);
+    } else {
+      // Set
+      props.setContact(data);
+    }
     console.log(data);
   };
-
   // Example usage:
   // const onChangeFunction = createDataCollector();
 
@@ -59,7 +65,7 @@ const Form = (props) => {
   return (
     <div>
       <h4 className="text-4xl text-center">Name Of CV</h4>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} onChange={createDataCollector}>
         <div>
           <label className="label flex flex-row justify-start">
             <span className=" font-semibold">Job Title:</span>
@@ -90,7 +96,7 @@ const Form = (props) => {
                 value={field.value}
                 onChange={(e) => {
                   field.onChange(e);
-                  createDataCollector(handleInputChange("firstName", e));
+                  handleInputChange("name", e);
                 }}
               />
             </>
@@ -108,6 +114,7 @@ const Form = (props) => {
             className="bg-base-200 py-2 px-5 rounded-md  outline-offset-4 outline-2 outline-gray-400"
             required
             {...register("name", { required: true })}
+            // onChange={handleInputChange("name", e)}
           />
         </div>
         <div className="form-control">
