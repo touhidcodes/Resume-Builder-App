@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { setContact, updateContact } from "../../Redux/Actions/setContact";
 
 const Form = (props) => {
-  const [changeData, setChangeData] = useState();
   const {
     register,
     handleSubmit,
@@ -13,74 +12,63 @@ const Form = (props) => {
     control,
   } = useForm();
 
+  let data = {};
+
+  //  onChange Handler to Get Input from Text Field
+  const handleInputChange = (field, event) => {
+    //  console.log(field, event.target.value);
+    data[field] = event.target.value;
+    //  console.log(data);
+  };
+
+  //  Collect Data From onChange Event and pass through Redux Store
+  const setStoreData = () => {
+    if (props.contact !== null) {
+      // Update
+      props.updateContact(data);
+    } else {
+      // Set
+      props.setContact(data);
+    }
+    console.log(data);
+  };
+
+  //  onSubmit Event of Form Submit
   const onSubmit = (data, event) => {
     event.preventDefault();
     console.log(data);
     setChangeData(data);
 
-    if (props.contact !== null) {
-      // Update
-      props.updateContact(data);
-    } else {
-      // Set
-      props.setContact(data);
-    }
+    // if (props.contact !== null) {
+    //   // Update
+    //   props.updateContact(data);
+    // } else {
+    //   // Set
+    //   props.setContact(data);
+    // }
   };
-
-  const onChange = (changeData) => {
-    const data = {};
-  };
-
-  // return handleInputChange;
-
-  const data = {};
-
-  const handleInputChange = (field, event) => {
-    console.log(field, event.target.value);
-    data[field] = event.target.value;
-    console.log(data);
-  };
-  const createDataCollector = () => {
-    // const collectData = (fieldName, value) => {
-    //   data[fieldName] = value;
-    //   console.log(data);
-    // };
-    if (props.contact !== null) {
-      // Update
-      props.updateContact(data);
-    } else {
-      // Set
-      props.setContact(data);
-    }
-    console.log(data);
-  };
-  // Example usage:
-  // const onChangeFunction = createDataCollector();
-
-  // onChangeFunction("title", "javascript"); // { title: 'javascript' }
-  // onChangeFunction("name", "g"); // { title: 'javascript', name: 'g' }
-  // onChangeFunction("email", "h"); // { title: 'javascript', name: 'g', email: 'h' }
-  // onChangeFunction("name2", "g"); // { title: 'javascript', name: 'g', email: 'h', name2: 'g' }
 
   return (
-    <div>
+    <div className="space-y-5">
       <h4 className="text-4xl text-center">Name Of CV</h4>
-      <form onSubmit={handleSubmit(onSubmit)} onChange={createDataCollector}>
-        <div>
+      <form onSubmit={handleSubmit(onSubmit)} onChange={setStoreData}>
+        {/* Job Title Input */}
+        <div
+          onChange={(e) => {
+            handleInputChange("title", e);
+          }}
+        >
           <label className="label flex flex-row justify-start">
             <span className=" font-semibold">Job Title:</span>
           </label>
-          <select
-            name="language"
-            id="language"
-            {...register("title", { required: true })}
-          >
+          <select name="title" {...register("title", { required: true })}>
             <option value="javascript">JavaScript</option>
             <option value="python">Python</option>
             <option value="c++">C++</option>
             <option value="java">Java</option>
           </select>
         </div>
+        {/* Name Input */}
         <Controller
           name="firstName"
           control={control}
