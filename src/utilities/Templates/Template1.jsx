@@ -1,5 +1,4 @@
 import React from "react";
-import { store } from "../../Redux/Store/Store";
 import { connect } from "react-redux";
 
 const Template1 = (props) => {
@@ -10,16 +9,22 @@ const Template1 = (props) => {
     if (contactData && contactData[key]) {
       return contactData[key];
     }
-    return "hi";
+    return "";
   };
   return (
-    <div>
+    <div className="space-y-3">
       This is template 1
-      <div className="bg-blue-500 text-white">
+      <div className="bg-blue-500 text-white p-3">
         Your Name: {getContactData("name")}
       </div>
-      <div className="bg-blue-500 text-white">
-        Your Name: {getContactData("email")}
+      <div className="bg-blue-500 text-white p-3">
+        Your email: {getContactData("email")}
+      </div>
+      <div className="bg-blue-500 text-white p-3">
+        Your Name: {getContactData("name2")}
+      </div>
+      <div className="bg-blue-500 text-white p-3">
+        Your email: {getContactData("email2")}
       </div>
     </div>
   );

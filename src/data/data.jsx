@@ -15,21 +15,21 @@ const templates = [
     id: 2,
     type: "local",
     thumbnail: images.image2,
-    data: <Template1 />,
+    data: <Template2 />,
   },
 
   {
     id: 3,
     type: "local",
     thumbnail: images.image3,
-    data: <Template2 />,
+    data: <Template1 />,
   },
 
   {
     id: 4,
     type: "local",
     thumbnail: images.image4,
-    data: <Template1 />,
+    data: <Template2 />,
   },
 ];
 
