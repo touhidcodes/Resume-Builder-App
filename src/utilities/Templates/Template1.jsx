@@ -15,6 +15,9 @@ const Template1 = (props) => {
     <div className="space-y-3">
       This is template 1
       <div className="bg-blue-500 text-white p-3">
+        Your Name: {getContactData("title")}
+      </div>
+      <div className="bg-blue-500 text-white p-3">
         Your Name: {getContactData("name")}
       </div>
       <div className="bg-blue-500 text-white p-3">
@@ -24,7 +27,10 @@ const Template1 = (props) => {
         Your Name: {getContactData("name2")}
       </div>
       <div className="bg-blue-500 text-white p-3">
-        Your email: {getContactData("email2")}
+        Your email: {getContactData("name3")}
+      </div>
+      <div className="bg-blue-500 text-white p-3">
+        Your email: {getContactData("name4")}
       </div>
     </div>
   );
