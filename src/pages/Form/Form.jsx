@@ -57,65 +57,96 @@ const Form = (props) => {
           <label className="label flex flex-row justify-start">
             <span className=" font-semibold">Job Title:</span>
           </label>
-          <select name="title" {...register("title", { required: true })}>
+          <select
+            name="title"
+            {...register("title", { required: true })}
+            className="pl-1 text-lg outline-none border-b-2"
+          >
+            <option defaultValue={"Select One"}>Select One</option>
             <option value="javascript">JavaScript</option>
             <option value="python">Python</option>
             <option value="c++">C++</option>
             <option value="java">Java</option>
           </select>
         </div>
-        {/* Name Input */}
-        <Controller
-          name="name"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <div className="form-control">
-              <label className="label flex flex-row justify-start">
-                <span className="text-gray-500 font-semibold">NAME:</span>
-                <span className="text-red-500 font-bold ml-2">*</span>
-              </label>
-              <input
-                type="name"
-                placeholder="Your Name"
-                className="bg-base-200 py-2 px-5 rounded-md  outline-offset-4 outline-2 outline-gray-400"
-                required
-                name={field.name}
-                value={field.value}
-                onChange={(e) => {
-                  field.onChange(e);
-                  handleInputChange(`"${field.name}"`, e);
-                }}
-              />
-            </div>
-          )}
-        />
-        {/* Email Input */}
-        <Controller
-          name="email"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <div className="form-control">
-              <label className="label flex flex-row justify-start">
-                <span className="text-gray-500 font-semibold">NAME:</span>
-                <span className="text-red-500 font-bold ml-2">*</span>
-              </label>
-              <input
-                type="email"
-                placeholder="Your Name"
-                className="bg-base-200 py-2 px-5 rounded-md  outline-offset-4 outline-2 outline-gray-400"
-                required
-                name={field.name}
-                value={field.value}
-                onChange={(e) => {
-                  field.onChange(e);
-                  handleInputChange(`"${field.name}"`, e);
-                }}
-              />
-            </div>
-          )}
-        />
+        <div className="grid grid-cols-2 gap-5">
+          {/* First Name Input */}
+          <Controller
+            name="first_name"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <div className="form-control">
+                <label className="label flex flex-row justify-start">
+                  <span className="text-xl">First Name:</span>
+                </label>
+                <input
+                  type="name"
+                  placeholder="Ex: Adnan"
+                  className=" pl-1 text-lg outline-none border-b-2"
+                  required
+                  name={field.name}
+                  value={field.value}
+                  onChange={(e) => {
+                    field.onChange(e);
+                    handleInputChange(`"${field.name}"`, e);
+                  }}
+                />
+              </div>
+            )}
+          />
+          {/* Last Name Input */}
+          <Controller
+            name="last_name"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <div className="form-control">
+                <label className="label flex flex-row justify-start">
+                  <span className="text-xl">Last Name:</span>
+                </label>
+                <input
+                  type="name"
+                  placeholder="Ex: Angr"
+                  className=" pl-1 text-lg outline-none border-b-2"
+                  required
+                  name={field.name}
+                  value={field.value}
+                  onChange={(e) => {
+                    field.onChange(e);
+                    handleInputChange(`"${field.name}"`, e);
+                  }}
+                />
+              </div>
+            )}
+          />
+          {/* Email Input */}
+          <Controller
+            name="email"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <div className="form-control">
+                <label className="label flex flex-row justify-start">
+                  <span className="text-gray-500 font-semibold">NAME:</span>
+                  <span className="text-red-500 font-bold ml-2">*</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="Your Name"
+                  className="bg-base-200 py-2 px-5 rounded-md  outline-offset-4 outline-2 outline-gray-400"
+                  required
+                  name={field.name}
+                  value={field.value}
+                  onChange={(e) => {
+                    field.onChange(e);
+                    handleInputChange(`"${field.name}"`, e);
+                  }}
+                />
+              </div>
+            )}
+          />
+        </div>
         {/* Name Input */}
         <Controller
           name="name2"

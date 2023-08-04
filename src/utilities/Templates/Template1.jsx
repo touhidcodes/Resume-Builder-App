@@ -18,7 +18,7 @@ const Template1 = (props) => {
         Your Name: {getContactData("title")}
       </div>
       <div className="bg-blue-500 text-white p-3">
-        Your Name: {getContactData("name")}
+        Your Name: {getContactData("first_name")}
       </div>
       <div className="bg-blue-500 text-white p-3">
         Your email: {getContactData("email")}
