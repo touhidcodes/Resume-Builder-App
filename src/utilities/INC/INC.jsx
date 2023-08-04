@@ -1,16 +1,16 @@
+// Input Naming Convention File
+
 const fieldINC = {
   /*Personal Information State */
-
-  FirstName: "FNAM",
-  LastName: "LNAM",
-  Email: "EMAIL",
-  Address: "ADRS",
-  Mobile: "MOBL",
-  City: "CITY",
-  Country: "COUN",
-  Postal: "PSTL",
-  Dob: "DOB",
-  Objective: "OBJT",
+  jobTitle: "JOBT",
+  firstName: "FNAM",
+  lastName: "LNAM",
+  email: "EMAIL",
+  address: "ADRS",
+  mobile: "MOBL",
+  city: "CITY",
+  country: "CONT",
+  phone: "PHON",
 
   /* Education information State*/
 
@@ -19,6 +19,9 @@ const fieldINC = {
   Startyear: "STYR",
   Endyear: "EDYR",
   University: "UNST",
+
+  dob: "DOB",
+  objective: "OBJT",
 };
 
 export default fieldINC;
