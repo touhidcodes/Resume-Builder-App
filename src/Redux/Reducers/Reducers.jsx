@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
+import personalReducer from "./personalReducer";
 import contactReducer from "./setContact";
 
 const rootReducer = combineReducers({
-  contactReducer,
+  personalReducer,
 });
 
 export default rootReducer;
