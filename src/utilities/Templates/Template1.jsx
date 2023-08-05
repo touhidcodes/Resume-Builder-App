@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import fieldINC from "../INC/INC";
 
 const Template1 = (props) => {
-  console.log("store", props);
   const personalData = props.personal;
   console.log("tem per", props.personal);
   const getPersonalData = (key) => {
@@ -15,10 +15,10 @@ const Template1 = (props) => {
     <div className="space-y-3">
       This is template 1
       <div className="bg-blue-500 text-white p-3">
-        Your Name: {getPersonalData("title")}
+        Your Name: {getPersonalData(fieldINC.jobTitle)}
       </div>
       <div className="bg-blue-500 text-white p-3">
-        Your Name: {getPersonalData("first_name")}
+        Your Name: {getPersonalData(fieldINC.firstName)}
       </div>
       <div className="bg-blue-500 text-white p-3">
         Your email: {getPersonalData("email")}
