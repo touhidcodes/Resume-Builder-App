@@ -3,11 +3,8 @@ import fieldINC from "../../utilities/INC/INC";
 import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
 import { setPersonal, updatePersonal } from "../../Redux/Actions/setPersonal";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
 
-const PersonalField = (props) => {
-  const [value, setValues] = useState();
+const ProfessionalField = (props) => {
   const {
     register,
     handleSubmit,
@@ -48,29 +45,9 @@ const PersonalField = (props) => {
     addToObject(field, event.target.value);
     console.log("input", field, event.target.value);
   };
-
   return (
     <div>
       <form onChange={handleSubmit(onChange)}>
-        {/* Job Title Input */}
-        <div>
-          <label className="label flex flex-row justify-start">
-            <span className=" font-semibold">Job Title:</span>
-          </label>
-          <select
-            {...register(`${fieldINC.jobTitle}`, { required: true })}
-            className="pl-1 text-lg outline-none border-b-2"
-            onChange={(e) => {
-              handleInputChange(`"${fieldINC.jobTitle}"`, e);
-            }}
-          >
-            <option defaultValue={"Select One"}>Select One</option>
-            <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="c++">C++</option>
-            <option value="java">Java</option>
-          </select>
-        </div>
         <div className="grid grid-cols-2 gap-5">
           {/* First Name Input */}
           <Controller
@@ -172,33 +149,6 @@ const PersonalField = (props) => {
               </div>
             )}
           />
-          {/* Phone Number Input */}
-          <Controller
-            name={fieldINC.phone}
-            control={control}
-            defaultValue=""
-            value={value}
-            onChange={(e) => {
-              field.onChange(e);
-              handleInputChange(fieldINC.phone, e);
-            }}
-            render={({ field }) => (
-              <div className="form-control">
-                <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Phone Number:</span>
-                </label>
-                <PhoneInput
-                  // type="number"
-                  placeholder="Ex: +8801300000000"
-                  className=" pl-1 text-lg outline-none border-b-2"
-                  required
-                  name={field.name}
-                  value={value}
-                  onChange={setValues}
-                />
-              </div>
-            )}
-          />
           {/* Email Input */}
           <Controller
             name={fieldINC.email}
@@ -247,4 +197,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PersonalField);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfessionalField);
