@@ -12,6 +12,8 @@ const fieldINC = {
   country: "CONT",
   phone: "PHON",
 
+  /*Professional Information State */
+
   /* Education information State*/
 
   Type: "TYPE",
