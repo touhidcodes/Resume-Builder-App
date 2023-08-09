@@ -32,14 +32,14 @@ const ProfessionalField = (props) => {
     event.preventDefault();
     // console.log(data);
 
-    console.log("personal", props.personal);
+    // console.log("professional", props.professional);
     //  Collect Data From onChange Event and pass through Redux Store
-    if (props.personal !== null) {
+    if (props.professional !== null) {
       // Update
-      props.updatePersonal(data);
+      props.updateProfessional(data);
     } else {
       // Set
-      props.setPersonal(data);
+      props.setProfessional(data);
     }
   };
   console.log(props);
@@ -54,7 +54,7 @@ const ProfessionalField = (props) => {
         <div className="grid grid-cols-2 gap-5">
           {/* Job Title Input */}
           <Controller
-            name={fieldINC.firstName}
+            name={fieldINC.jobTitle_1}
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -65,7 +65,7 @@ const ProfessionalField = (props) => {
                 <input
                   type="name"
                   placeholder="Ex: Web Developer"
-                  className="pl-2 py-1 text-lg outline-none bg-base-300"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
                   required
                   name={field.name}
                   value={field.value}
@@ -79,7 +79,7 @@ const ProfessionalField = (props) => {
           />
           {/* Company Input */}
           <Controller
-            name={fieldINC.lastName}
+            name={fieldINC.company_1}
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -90,7 +90,7 @@ const ProfessionalField = (props) => {
                 <input
                   type="name"
                   placeholder="Ex: Employee Pro"
-                  className="pl-2 py-1 text-lg outline-none bg-base-300"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
                   required
                   name={field.name}
                   value={field.value}
@@ -104,7 +104,7 @@ const ProfessionalField = (props) => {
           />
           {/* Started Date Input */}
           <Controller
-            name={fieldINC.country}
+            name={fieldINC.startedDate_1}
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -115,7 +115,7 @@ const ProfessionalField = (props) => {
                 <input
                   type="text"
                   placeholder="Ex: JAN 2023"
-                  className="pl-2 py-1 text-lg outline-none bg-base-300"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
                   required
                   name={field.name}
                   value={field.value}
@@ -129,7 +129,7 @@ const ProfessionalField = (props) => {
           />
           {/* End Date Input */}
           <Controller
-            name={fieldINC.city}
+            name={fieldINC.endDate_1}
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -140,7 +140,7 @@ const ProfessionalField = (props) => {
                 <input
                   type="text"
                   placeholder="Ex: DEC 2023"
-                  className="pl-2 py-1 text-lg outline-none bg-base-300"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
                   required
                   name={field.name}
                   value={field.value}
@@ -154,7 +154,7 @@ const ProfessionalField = (props) => {
           />
           {/* Location Input */}
           <Controller
-            name={fieldINC.email}
+            name={fieldINC.location_1}
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -165,7 +165,7 @@ const ProfessionalField = (props) => {
                 <input
                   type="name"
                   placeholder="Ex: Dhaka, Bangladesh"
-                  className="pl-2 py-1 text-lg outline-none bg-base-300"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
                   required
                   name={field.name}
                   value={field.value}

@@ -13,6 +13,11 @@ const fieldINC = {
   phone: "PHON",
 
   /*Professional Information State */
+  jobTitle_1: "JOBT_1",
+  company_1: "COMP_1",
+  startedDate_1: "STD_1",
+  endDate_1: "END_1",
+  location_1: "LOCT_1",
 
   /* Education information State*/
 

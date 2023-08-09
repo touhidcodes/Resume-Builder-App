@@ -4,7 +4,9 @@ import fieldINC from "../INC/INC";
 
 const Template1 = (props) => {
   const personalData = props.personal;
-  console.log("tem per", props.personal);
+  console.log("personal", props.personal);
+  console.log("professional", props.professional);
+
   const getPersonalData = (key) => {
     if (personalData && personalData[key]) {
       return personalData[key];
@@ -21,7 +23,7 @@ const Template1 = (props) => {
         Your Name: {getPersonalData(fieldINC.firstName)}
       </div>
       <div className="bg-blue-500 text-white p-3">
-        Your email: {getPersonalData("email")}
+        Your email: {getPersonalData(fieldINC.jobTitle_1)}
       </div>
       <div className="bg-blue-500 text-white p-3">
         Your Name: {getPersonalData("name2")}
