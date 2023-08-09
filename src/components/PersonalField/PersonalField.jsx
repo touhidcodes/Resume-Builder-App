@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { setPersonal, updatePersonal } from "../../Redux/Actions/setPersonal";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import personalReducer from "../../Redux/Reducers/personalReducer";
 
 const PersonalField = (props) => {
   const [value, setValues] = useState();
@@ -178,7 +177,7 @@ const PersonalField = (props) => {
             name={fieldINC.phone}
             control={control}
             defaultValue=""
-            // value={value}
+            value={value}
             onChange={(e) => {
               field.onChange(e);
               handleInputChange(fieldINC.phone, e);
