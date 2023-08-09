@@ -192,8 +192,8 @@ const mapStateToProps = (state) => {
 // Mapping actions from Redux to component props
 const mapDispatchToProps = (dispatch) => {
   return {
-    setPersonal: (personal) => dispatch(setPersonal(personal)),
-    updatePersonal: (personal) => dispatch(updatePersonal(personal)),
+    setPersonal: (professional) => dispatch(setPersonal(professional)),
+    updatePersonal: (professional) => dispatch(updatePersonal(professional)),
   };
 };
 
