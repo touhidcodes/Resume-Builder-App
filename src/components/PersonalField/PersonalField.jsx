@@ -226,7 +226,7 @@ const PersonalField = (props) => {
             )}
           />
         </div>
-        <input type="submit" value="submit" />
+        {/* <input type="submit" value="submit" /> */}
       </form>
     </div>
   );

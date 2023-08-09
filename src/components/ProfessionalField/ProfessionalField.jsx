@@ -49,7 +49,7 @@ const ProfessionalField = (props) => {
     <div>
       <form onChange={handleSubmit(onChange)}>
         <div className="grid grid-cols-2 gap-5">
-          {/* First Name Input */}
+          {/* Job Title Input */}
           <Controller
             name={fieldINC.firstName}
             control={control}
@@ -57,12 +57,12 @@ const ProfessionalField = (props) => {
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">First Name:</span>
+                  <span className="text-xl">Job Title:</span>
                 </label>
                 <input
                   type="name"
-                  placeholder="Ex: Adnan"
-                  className=" pl-1 text-lg outline-none border-b-2"
+                  placeholder="Ex: Web Developer"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300"
                   required
                   name={field.name}
                   value={field.value}
@@ -74,7 +74,7 @@ const ProfessionalField = (props) => {
               </div>
             )}
           />
-          {/* Last Name Input */}
+          {/* Company Input */}
           <Controller
             name={fieldINC.lastName}
             control={control}
@@ -82,12 +82,12 @@ const ProfessionalField = (props) => {
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Last Name:</span>
+                  <span className="text-xl">Company:</span>
                 </label>
                 <input
                   type="name"
-                  placeholder="Ex: Angr"
-                  className=" pl-1 text-lg outline-none border-b-2"
+                  placeholder="Ex: Employee Pro"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300"
                   required
                   name={field.name}
                   value={field.value}
@@ -99,7 +99,7 @@ const ProfessionalField = (props) => {
               </div>
             )}
           />
-          {/* Country Input */}
+          {/* Started Date Input */}
           <Controller
             name={fieldINC.country}
             control={control}
@@ -107,12 +107,12 @@ const ProfessionalField = (props) => {
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Country:</span>
+                  <span className="text-xl">Started Date:</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Ex: Bangladesh"
-                  className=" pl-1 text-lg outline-none border-b-2"
+                  placeholder="Ex: JAN 2023"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300"
                   required
                   name={field.name}
                   value={field.value}
@@ -124,7 +124,7 @@ const ProfessionalField = (props) => {
               </div>
             )}
           />
-          {/* City Input */}
+          {/* End Date Input */}
           <Controller
             name={fieldINC.city}
             control={control}
@@ -132,12 +132,12 @@ const ProfessionalField = (props) => {
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">City:</span>
+                  <span className="text-xl">End Date:</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Ex: Jashore"
-                  className=" pl-1 text-lg outline-none border-b-2"
+                  placeholder="Ex: DEC 2023"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300"
                   required
                   name={field.name}
                   value={field.value}
@@ -149,7 +149,7 @@ const ProfessionalField = (props) => {
               </div>
             )}
           />
-          {/* Email Input */}
+          {/* Location Input */}
           <Controller
             name={fieldINC.email}
             control={control}
@@ -157,13 +157,12 @@ const ProfessionalField = (props) => {
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Email:</span>
+                  <span className="text-xl">Location:</span>
                 </label>
                 <input
-                  // TODO: Change input field type to email
                   type="name"
-                  placeholder="Ex: name@domain.com"
-                  className=" pl-1 text-lg outline-none border-b-2"
+                  placeholder="Ex: Dhaka, Bangladesh"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300"
                   required
                   name={field.name}
                   value={field.value}
@@ -176,7 +175,7 @@ const ProfessionalField = (props) => {
             )}
           />
         </div>
-        <input type="submit" value="submit" />
+        {/* <input type="submit" value="submit" /> */}
       </form>
     </div>
   );
