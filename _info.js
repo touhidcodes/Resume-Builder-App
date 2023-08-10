@@ -14,4 +14,5 @@
 12. edit mapping actions from Redux to component props action
 13. add and import INCField, register with input field by name
 14. connect with redux store by redux action, handling on change event
+15. pass redux reducer to rootReducer 
 */

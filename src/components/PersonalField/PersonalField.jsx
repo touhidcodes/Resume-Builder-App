@@ -16,18 +16,6 @@ const PersonalField = (props) => {
     control,
   } = useForm();
 
-  let data = {};
-
-  //  Add Data into Object
-  const addToObject = (key, value) => {
-    const preObj = { ...data };
-
-    // if (!key in data) {
-    //   console.log("key");
-    // }
-  };
-  // console.log(data);
-
   const onChange = (data, event) => {
     event.preventDefault();
     // console.log(data);
@@ -42,7 +30,7 @@ const PersonalField = (props) => {
       props.setPersonal(data);
     }
   };
-  console.log(props);
+
   // onChange Handler to Get Input from Text Field
   const handleInputChange = (field, event) => {
     addToObject(field, event.target.value);
@@ -91,7 +79,6 @@ const PersonalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -116,7 +103,6 @@ const PersonalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -141,7 +127,6 @@ const PersonalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -166,7 +151,6 @@ const PersonalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -180,7 +164,6 @@ const PersonalField = (props) => {
             value={value}
             onChange={(e) => {
               field.onChange(e);
-              handleInputChange(fieldINC.phone, e);
             }}
             render={({ field }) => (
               <div className="form-control">
@@ -219,14 +202,12 @@ const PersonalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
             )}
           />
         </div>
-        {/* <input type="submit" value="submit" /> */}
       </form>
     </div>
   );

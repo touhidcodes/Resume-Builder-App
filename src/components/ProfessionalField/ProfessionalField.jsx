@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import fieldINC from "../../utilities/INC/INC";
 import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
@@ -16,23 +16,10 @@ const ProfessionalField = (props) => {
     control,
   } = useForm();
 
-  let data = {};
-
-  //  Add Data into Object
-  const addToObject = (key, value) => {
-    const preObj = { ...data };
-
-    // if (!key in data) {
-    //   console.log("key");
-    // }
-  };
-  // console.log(data);
-
   const onChange = (data, event) => {
     event.preventDefault();
     // console.log(data);
 
-    // console.log("professional", props.professional);
     //  Collect Data From onChange Event and pass through Redux Store
     if (props.professional !== null) {
       // Update
@@ -42,12 +29,7 @@ const ProfessionalField = (props) => {
       props.setProfessional(data);
     }
   };
-  console.log(props);
-  // onChange Handler to Get Input from Text Field
-  const handleInputChange = (field, event) => {
-    addToObject(field, event.target.value);
-    console.log("input", field, event.target.value);
-  };
+
   return (
     <div>
       <form onChange={handleSubmit(onChange)}>
@@ -71,7 +53,6 @@ const ProfessionalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -96,7 +77,6 @@ const ProfessionalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -121,7 +101,6 @@ const ProfessionalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -146,7 +125,6 @@ const ProfessionalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
@@ -171,7 +149,6 @@ const ProfessionalField = (props) => {
                   value={field.value}
                   onChange={(e) => {
                     field.onChange(e);
-                    handleInputChange(`"${field.name}"`, e);
                   }}
                 />
               </div>
