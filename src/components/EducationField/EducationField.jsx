@@ -16,9 +16,12 @@ const EducationField = (props) => {
     control,
   } = useForm();
 
+  console.log(props);
+
   const onChange = (data, event) => {
     event.preventDefault();
-    // console.log(data);
+    console.log(data);
+    console.log(props);
 
     //  Collect Data From onChange Event and pass through Redux Store
     if (props.education !== null) {

@@ -24,6 +24,8 @@ const ProfessionalField = (props) => {
     if (props.professional !== null) {
       // Update
       props.updateProfessional(data);
+      console.log("data_updated");
+      console.log("data_updated", props);
     } else {
       // Set
       props.setProfessional(data);
