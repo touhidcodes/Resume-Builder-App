@@ -3,9 +3,9 @@ import fieldINC from "../../utilities/INC/INC";
 import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
 import {
-  setProfessional,
-  updateProfessional,
-} from "../../Redux/Actions/setProfessional";
+  setEducation,
+  updateEducation,
+} from "../../Redux/Actions/setEducation";
 
 const EducationField = (props) => {
   const {
@@ -163,16 +163,15 @@ const EducationField = (props) => {
 //  Mapping state from Redux to component props
 const mapStateToProps = (state) => {
   return {
-    professional: state.professionalReducer,
+    education: state.educationalReducer,
   };
 };
 
 // Mapping actions from Redux to component props
 const mapDispatchToProps = (dispatch) => {
   return {
-    setProfessional: (professional) => dispatch(setProfessional(professional)),
-    updateProfessional: (professional) =>
-      dispatch(updateProfessional(professional)),
+    setEducation: (education) => dispatch(setEducation(education)),
+    updateEducation: (education) => dispatch(updateEducation(education)),
   };
 };
 
