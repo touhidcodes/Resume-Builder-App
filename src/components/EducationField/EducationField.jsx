@@ -21,12 +21,12 @@ const EducationField = (props) => {
     // console.log(data);
 
     //  Collect Data From onChange Event and pass through Redux Store
-    if (props.professional !== null) {
+    if (props.education !== null) {
       // Update
-      props.updateProfessional(data);
+      props.updateEducation(data);
     } else {
       // Set
-      props.setProfessional(data);
+      props.setEducation(data);
     }
   };
 
@@ -34,15 +34,15 @@ const EducationField = (props) => {
     <div>
       <form onChange={handleSubmit(onChange)}>
         <div className="grid grid-cols-2 gap-5">
-          {/* Job Title Input */}
+          {/* College/University Input */}
           <Controller
-            name={fieldINC.jobTitle_1}
+            name={fieldINC.university}
             control={control}
             defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Job Title:</span>
+                  <span className="text-xl">College/University:</span>
                 </label>
                 <input
                   type="name"
@@ -58,15 +58,15 @@ const EducationField = (props) => {
               </div>
             )}
           />
-          {/* Company Input */}
+          {/* Degree Input */}
           <Controller
-            name={fieldINC.company_1}
+            name={fieldINC.degree}
             control={control}
             defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Company:</span>
+                  <span className="text-xl">Degree:</span>
                 </label>
                 <input
                   type="name"
@@ -84,13 +84,13 @@ const EducationField = (props) => {
           />
           {/* Started Date Input */}
           <Controller
-            name={fieldINC.startedDate_1}
+            name={fieldINC.startedYear}
             control={control}
             defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Started Date:</span>
+                  <span className="text-xl">Started Year:</span>
                 </label>
                 <input
                   type="text"
@@ -108,13 +108,13 @@ const EducationField = (props) => {
           />
           {/* End Date Input */}
           <Controller
-            name={fieldINC.endDate_1}
+            name={fieldINC.endYear}
             control={control}
             defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">End Date:</span>
+                  <span className="text-xl">End Year:</span>
                 </label>
                 <input
                   type="text"
@@ -132,7 +132,7 @@ const EducationField = (props) => {
           />
           {/* Location Input */}
           <Controller
-            name={fieldINC.location_1}
+            name={fieldINC.eLocation}
             control={control}
             defaultValue=""
             render={({ field }) => (

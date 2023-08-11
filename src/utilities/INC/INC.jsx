@@ -20,12 +20,12 @@ const fieldINC = {
   location_1: "LOCT_1",
 
   /* Education information State*/
-
-  Type: "TYPE",
-  Degree: "DGRE",
-  Startyear: "STYR",
-  Endyear: "EDYR",
-  University: "UNST",
+  university: "UNST",
+  degree: "DGRE",
+  startedYear: "ESTY",
+  endYear: "EENY",
+  eLocation: "ELOC",
+  about: "ABOT",
 
   dob: "DOB",
   objective: "OBJT",

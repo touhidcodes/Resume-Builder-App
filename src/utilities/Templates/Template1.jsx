@@ -4,8 +4,11 @@ import fieldINC from "../INC/INC";
 
 const Template1 = (props) => {
   const personalData = props.personal;
+  console.log("props", props);
+
   console.log("personal", props.personal);
   console.log("professional", props.professional);
+  console.log("education", props.education);
 
   const getPersonalData = (key) => {
     if (personalData && personalData[key]) {
