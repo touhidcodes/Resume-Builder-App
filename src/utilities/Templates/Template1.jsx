@@ -62,7 +62,7 @@ const Template1 = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    // Assigning contactReducer state to 'contact' prop
+    // Assigning Reducer state to 'contact' prop
     personal: state.personalReducer,
     professional: state.professionalReducer,
     education: state.educationalReducer,

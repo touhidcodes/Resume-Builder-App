@@ -2,6 +2,7 @@ import React from "react";
 import PersonalField from "../../components/PersonalField/PersonalField";
 import ProfessionalField from "../../components/ProfessionalField/ProfessionalField";
 import EducationField from "../../components/EducationField/EducationField";
+import SkillField from "../../components/SkillField/SkillField";
 
 const Form = () => {
   return (
@@ -10,6 +11,7 @@ const Form = () => {
       <PersonalField />
       <ProfessionalField />
       <EducationField />
+      <SkillField />
     </div>
   );
 };
