@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-const SkillField = (props) => {
-  const [skillsInput, setSkillsInput] = useState([{ skill: "", rating: "" }]);
+const SocialField = (props) => {
+  const [socialInput, setSocialInput] = useState([{ skill: "", rating: "" }]);
   const {
     register,
     handleSubmit,
@@ -15,8 +15,8 @@ const SkillField = (props) => {
     control,
   } = useForm();
 
-  const addSkillField = () => {
-    setSkillsInput([...skillsInput, { skill: "", rating: "" }]);
+  const addSocialField = () => {
+    setSocialInput([...socialInput, { skill: "", rating: "" }]);
   };
 
   const onChange = (data, event) => {
@@ -26,7 +26,7 @@ const SkillField = (props) => {
   return (
     <div>
       <form onChange={handleSubmit(onChange)}>
-        {skillsInput.map((skill, index) => {
+        {socialInput.map((social, index) => {
           return (
             <div className="grid grid-cols-2 gap-5">
               {/* Skills input */}
@@ -37,7 +37,7 @@ const SkillField = (props) => {
                 render={({ field }) => (
                   <div className="form-control">
                     <label className="label flex flex-row justify-start">
-                      <span className="text-xl">Skills:</span>
+                      <span className="text-xl">Social Handel:</span>
                     </label>
                     <input
                       type="name"
@@ -61,11 +61,11 @@ const SkillField = (props) => {
                 render={({ field }) => (
                   <div className="form-control">
                     <label className="label flex flex-row justify-start">
-                      <span className="text-xl">Ratings:</span>
+                      <span className="text-xl">Link:</span>
                     </label>
                     <input
                       type="name"
-                      placeholder="Ex: 60"
+                      placeholder="Ex: https://www.linkedin.com/in/yourUsername/"
                       className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
                       required
                       name={field.name}
@@ -81,7 +81,7 @@ const SkillField = (props) => {
           );
         })}
         <div className="text-center mt-5">
-          <button onClick={addSkillField}>
+          <button onClick={addSocialField}>
             <div className="text-blue-600 font-semibold flex flex-row items-center">
               <Icon icon="gala:add" className="h-6 w-6" />
               <h1 className="text-lg ml-2">Add More Field</h1>
@@ -93,4 +93,4 @@ const SkillField = (props) => {
   );
 };
 
-export default SkillField;
+export default SocialField;

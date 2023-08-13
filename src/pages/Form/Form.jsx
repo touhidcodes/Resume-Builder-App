@@ -3,6 +3,7 @@ import PersonalField from "../../components/PersonalField/PersonalField";
 import ProfessionalField from "../../components/ProfessionalField/ProfessionalField";
 import EducationField from "../../components/EducationField/EducationField";
 import SkillField from "../../components/SkillField/SkillField";
+import SocialField from "../../components/SocialField/SocialField";
 
 const Form = () => {
   return (
@@ -11,6 +12,7 @@ const Form = () => {
       <PersonalField />
       <ProfessionalField />
       <EducationField />
+      <SocialField />
       <SkillField />
     </div>
   );

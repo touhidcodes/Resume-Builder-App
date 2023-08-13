@@ -36,25 +36,27 @@ const Template1 = (props) => {
   };
 
   return (
-    <div className="space-y-3">
-      This is template 1
-      <div className="bg-blue-500 text-white p-3">
-        Your Name: {getPersonalData(fieldINC.jobTitle)}
-      </div>
-      <div className="bg-blue-500 text-white p-3">
-        Your Name: {getProfessionalData(fieldINC.jobTitle_1)}
-      </div>
-      <div className="bg-blue-500 text-white p-3">
-        Your email: {getEducationData(fieldINC.startedYear)}
-      </div>
-      <div className="bg-blue-500 text-white p-3">
-        Your Name: {getPersonalData(fieldINC.lastName)}
-      </div>
-      <div className="bg-blue-500 text-white p-3">
-        Your email: {getPersonalData("name3")}
-      </div>
-      <div className="bg-blue-500 text-white p-3">
-        Your email: {getPersonalData("name4")}
+    <div>
+      <div className="space-y-3">
+        This is template 1
+        <div className="bg-blue-500 text-white p-3">
+          Your Name: {getPersonalData(fieldINC.jobTitle)}
+        </div>
+        <div className="bg-blue-500 text-white p-3">
+          Your Name: {getProfessionalData(fieldINC.jobTitle_1)}
+        </div>
+        <div className="bg-blue-500 text-white p-3">
+          Your email: {getEducationData(fieldINC.startedYear)}
+        </div>
+        <div className="bg-blue-500 text-white p-3">
+          Your Name: {getPersonalData(fieldINC.lastName)}
+        </div>
+        <div className="bg-blue-500 text-white p-3">
+          Your email: {getPersonalData("name3")}
+        </div>
+        <div className="bg-blue-500 text-white p-3">
+          Your email: {getPersonalData("name4")}
+        </div>
       </div>
     </div>
   );
