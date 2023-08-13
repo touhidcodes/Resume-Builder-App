@@ -5,7 +5,7 @@ import data from "../../data/data";
 import Template1 from "../../utilities/Templates/Template1";
 
 const BuilderLayout = () => {
-  const log = useParams();
+  const resume = useParams();
   // console.log(id.id);
   const [allData, setAllData] = useState(data);
   console.log(allData);
@@ -13,13 +13,16 @@ const BuilderLayout = () => {
   // console.log(d);
 
   return (
-    <div className="grid grid-cols-2">
-      <div>
-        <Form />
-      </div>
-      <div>
-        <Outlet />
-        {allData.map((item) => (item.id == log.id ? item.data : ""))}
+    <div className="">
+      <div className="grid grid-cols-2 gap-5">
+        <div>
+          <Form />
+        </div>
+        <div>
+          <div className="p-10 bg-base-200 min-h-screen">
+            {allData.map((item) => (item.id == resume.id ? item.data : ""))}
+          </div>
+        </div>
       </div>
     </div>
   );
