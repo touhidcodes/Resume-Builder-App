@@ -11,17 +11,7 @@ const Template2 = (props) => {
     }
     return "hi";
   };
-  return (
-    <div className="space-y-3">
-      This is template 2
-      <div className="bg-blue-500 text-white p-3">
-        Your Name: {getContactData("name")}
-      </div>
-      <div className="bg-blue-500 text-white p-3">
-        Your email: {getContactData("email")}
-      </div>
-    </div>
-  );
+  return <div></div>;
 };
 
 const mapStateToProps = (state) => {

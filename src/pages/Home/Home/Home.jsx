@@ -21,6 +21,12 @@ const Home = () => {
           ))}
         </div>
       </div>
+      {/* DEV Options */}
+      <div>
+        <Link to="template">
+          <button className="btn btn-outline btn-error">See Template</button>
+        </Link>
+      </div>
     </div>
   );
 };
