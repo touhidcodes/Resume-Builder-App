@@ -7,3 +7,5 @@ export const SET_PROFESSIONAL = "SET_PROFESSIONAL";
 export const UPDATE_PROFESSIONAL = "UPDATE_PROFESSIONAL";
 export const SET_EDUCATION = "SET_EDUCATION";
 export const UPDATE_EDUCATION = "UPDATE_EDUCATION";
+// Actions for Saving resume to "My-resume"
+export const SAVE_RESUME = "SAVE_RESUME";
