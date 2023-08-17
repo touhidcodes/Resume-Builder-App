@@ -17,4 +17,4 @@ const updateTemplate = (template) => {
     payload: template,
   };
 };
-export { updatetemplate };
+export { updateTemplate };
