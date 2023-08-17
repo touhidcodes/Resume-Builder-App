@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import data from "../../../data/data";
 import { Link } from "react-router-dom";
-const Home = () => {
+import { connect } from "react-redux";
+import { setTemplate, updateTemplate } from "../../Redux/Actions/setTemplate";
+
+const Templates = () => {
   const [resume, setResume] = useState(data);
   console.log(allData);
   return (
     <div>
-      This is bloody Home
       <div>
-        <h4 className="text-4xl text-center">Select Templates</h4>
+        <h4 className="text-4xl text-center">Select Your Templates</h4>
         <div className="grid grid-cols-2 gap-10">
           {resume.map((item) => (
             <div>
@@ -40,9 +42,9 @@ const mapStateToProps = (state) => {
 // Map the Redux dispatch actions to component props
 const mapDispatchToProps = (dispatch) => {
   return {
-    settemplate: (template) => dispatch(settemplate(template)),
-    updatetemplate: (template) => dispatch(updatetemplate(template)),
+    setTemplate: (template) => dispatch(setTemplate(template)),
+    updateTemplate: (template) => dispatch(updateTemplate(template)),
   };
 };
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Templates);

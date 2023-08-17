@@ -55,12 +55,11 @@ const SaveMyResume = (props) => {
               {savedResume}
             </div>
           ) : (
-            ""
+            <p className="text-red-400">No Data</p>
             // TODO: Implement if there no data shows !!!
             // <img style={{ width: "15vw", marginTop: "10vw" }} src={nodata} />
           )}
         </div>
-        <div>Temp Btn</div>
         {props.savedFile ? (
           <button
             variant="contained"
@@ -83,23 +82,6 @@ const SaveMyResume = (props) => {
           ""
         )}
       </div>
-      <button
-        variant="contained"
-        color="primary"
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-          alignItems: "center",
-        }}
-        onClick={downloadResume} //Download the Document
-        onMouseEnter={handleHover} // Handle hover enter event
-        onMouseLeave={handleHoverExit} // Handle hover exit event
-        className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
-      >
-        Download
-      </button>
     </div>
   );
 };
