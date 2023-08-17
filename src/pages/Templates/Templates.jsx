@@ -5,18 +5,19 @@ import { connect } from "react-redux";
 import { setTemplate, updateTemplate } from "../../Redux/Actions/setTemplate";
 import TemplateCard from "./TemplateCard";
 
-const Templates = () => {
-  const [resume, setResume] = useState(data);
-
+const Templates = (props) => {
+  const [templates, setTemplates] = useState(data);
+  console.log(props);
   return (
     <div>
       <h4 className="text-4xl text-center">Select Your Templates</h4>
       <div className="grid grid-cols-2 gap-10">
-        {resume.map((templates) => (
+        {templates.map((templates) => (
           <TemplateCard
-            key={templates.key}
+            key={templates.id}
             id={templates.id}
             data={templates.data}
+            type={templates.type}
             thumbnail={templates.thumbnail}
           />
         ))}

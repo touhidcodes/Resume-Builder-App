@@ -7,7 +7,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import SaveMyResume from "../../components/SaveMyResume/SaveMyResume";
 
-const ResumeBuilder = () => {
+const ResumeBuilder = (props) => {
   const downloadResume = async () => {
     const input = document.getElementById("download");
     html2canvas(input)
@@ -26,11 +26,11 @@ const ResumeBuilder = () => {
   const resume = useParams();
   // console.log(id.id);
   const [allData, setAllData] = useState(data);
-  //  console.log(allData);
+  // console.log(props);
   return (
     <div className="grid grid-cols-2 gap-5">
       <div>
-        <ResumeForm downloadResume />
+        <ResumeForm />
       </div>
       <div>
         <div className="p-10 bg-base-200 min-h-screen">

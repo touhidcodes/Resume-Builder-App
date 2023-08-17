@@ -1,6 +1,9 @@
 // Actions for Template selection
 export const SET_TEMPLATE = "SET_TEMPLATE";
 export const UPDATE_TEMPLATE = "UPDATE_TEMPLATE";
+// Actions for Template selection ID
+export const SET_TEMPLATE_ID = "SET_TEMPLATE_ID";
+export const UPDATE_TEMPLATE_ID = "UPDATE_TEMPLATE_ID";
 
 // Actions for personal information Data
 export const SET_CONTACT = "SET_CONTACT";

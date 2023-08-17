@@ -2,19 +2,17 @@ import { SET_TEMPLATE } from "../ActionCreators/ActionCreators";
 import { UPDATE_TEMPLATE } from "../ActionCreators/ActionCreators";
 
 //Set template when selected
-const setTemplate = (template) => {
+export const setTemplate = (id) => {
   return {
     type: SET_TEMPLATE,
-    payload: template,
+    payload: id,
   };
 };
-export { setTemplate };
 
 //Update template if already exist
-const updateTemplate = (template) => {
+export const updateTemplate = (id) => {
   return {
     type: UPDATE_TEMPLATE,
-    payload: template,
+    payload: id,
   };
 };
-export { updateTemplate };

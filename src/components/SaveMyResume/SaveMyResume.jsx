@@ -7,7 +7,7 @@ import { saveResume } from "../../Redux/Actions/saveResume";
 
 const SaveMyResume = (props) => {
   console.log(props);
-
+  const [resume, setResume] = useState(props.previewData);
   // Recieving props from Reducer
   const savedResume = props.savedFile;
 
@@ -90,6 +90,7 @@ const SaveMyResume = (props) => {
 const mapStateToProps = (state) => {
   return {
     previewData: state.templateReducer,
+    resume: state.templateReducer,
   };
 };
 

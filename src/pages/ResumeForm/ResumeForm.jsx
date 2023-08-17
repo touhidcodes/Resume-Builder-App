@@ -5,6 +5,7 @@ import EducationField from "../../components/EducationField/EducationField";
 import SkillField from "../../components/SkillField/SkillField";
 import SocialField from "../../components/SocialField/SocialField";
 import SaveMyResume from "../../components/SaveMyResume/SaveMyResume";
+import { Link } from "react-router-dom";
 
 const ResumeForm = ({ downloadResume }) => {
   return (
@@ -17,6 +18,11 @@ const ResumeForm = ({ downloadResume }) => {
         <SocialField />
         <SkillField />
         <SaveMyResume downloadResume />
+        <div>
+          <Link to="/preview">
+            <button className="btn btn-primary">Preview</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

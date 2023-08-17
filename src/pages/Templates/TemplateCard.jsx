@@ -1,28 +1,29 @@
 import React from "react";
 import { setTemplate, updateTemplate } from "../../Redux/Actions/setTemplate";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 
-const TemplateCard = ({
-  id,
-  data,
-  thumbnail,
-  setTemplate,
-  updateTemplate,
-  resumeDataProps,
-}) => {
-  const template = { data, thumbnail };
-  const TemplateData = resumeDataProps;
+const TemplateCard = (props) => {
+  const { id, type, thumbnail, data } = props;
+  const template = { id, type, data };
+  // const TemplateData = resume;
+  const navigate = useNavigate();
 
   const selectTemplate = () => {
-    if (TemplateData !== null) {
-      // Update
-      updateTemplate(template);
-    } else {
-      // Set
-      setTemplate(template);
-    }
+    // console.log(id);
+
+    // if (props.resume !== null) {
+    //   // Update
+    //   updateTemplate(id);
+    // } else {
+    //   // Set
+    //   setTemplate(id);
+    // }
+
+    props.setTemplate(template);
+    console.log(template);
   };
+  console.log(props);
   return (
     <div>
       <img src={thumbnail} alt="" className="h-96 w-96" />
@@ -38,7 +39,7 @@ const TemplateCard = ({
 // Mapping state from Redux to component props
 const mapStateToProps = (state) => {
   return {
-    resumeDataProps: state.templateReducer,
+    resume: state.templateReducer,
   };
 };
 // Mapping actions from Redux to component props

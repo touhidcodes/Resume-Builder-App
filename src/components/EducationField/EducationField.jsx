@@ -167,6 +167,7 @@ const EducationField = (props) => {
 const mapStateToProps = (state) => {
   return {
     education: state.educationalReducer,
+    resume: state.templateReducer,
   };
 };
 

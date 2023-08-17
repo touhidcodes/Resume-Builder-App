@@ -4,6 +4,7 @@ import Home from "../../pages/Home/Home/Home";
 import ResumeBuilder from "../../pages/ResumeBuilder/ResumeBuilder";
 import Template2 from "../../utilities/Templates/Template2";
 import Templates from "../../pages/Templates/Templates";
+import ResumePreview from "../../pages/ResumePreview/ResumePreview";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "templates",
     element: <Templates />,
+  },
+  {
+    path: "preview",
+    element: <ResumePreview />,
   },
   {
     path: "template",
