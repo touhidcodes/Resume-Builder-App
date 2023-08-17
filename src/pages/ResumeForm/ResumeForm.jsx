@@ -6,7 +6,7 @@ import SkillField from "../../components/SkillField/SkillField";
 import SocialField from "../../components/SocialField/SocialField";
 import SaveMyResume from "../../components/SaveMyResume/SaveMyResume";
 
-const ResumeForm = () => {
+const ResumeForm = ({ downloadResume }) => {
   return (
     <div className="fixed overflow-y-scroll h-full">
       <div className="space-y-5  pr-10">
@@ -16,7 +16,7 @@ const ResumeForm = () => {
         <EducationField />
         <SocialField />
         <SkillField />
-        <SaveMyResume />
+        <SaveMyResume downloadResume />
       </div>
     </div>
   );
