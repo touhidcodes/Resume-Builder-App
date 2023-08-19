@@ -8,8 +8,8 @@ import { saveResume } from "../../Redux/Actions/saveResume";
 const SaveMyResume = (props) => {
   console.log(props);
   const [resume, setResume] = useState(props.previewData);
-  // Recieving props from Reducer
-  const savedResume = props.savedFile;
+  // Receiving props from Reducer
+  const savedResume = props.resume;
 
   // State for hover effect
   const [isHovered, setIsHovered] = useState(false);

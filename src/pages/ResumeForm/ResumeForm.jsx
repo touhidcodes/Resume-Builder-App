@@ -7,7 +7,7 @@ import SocialField from "../../components/SocialField/SocialField";
 import SaveMyResume from "../../components/SaveMyResume/SaveMyResume";
 import { Link } from "react-router-dom";
 
-const ResumeForm = ({ downloadResume }) => {
+const ResumeForm = () => {
   return (
     <div className="fixed overflow-y-scroll h-full">
       <div className="space-y-5  pr-10">
