@@ -30,7 +30,7 @@ const ResumePreview = (props) => {
   return (
     <div>
       Preview
-      <div id="download">{/* {resume.data} */}</div>
+      <div id="download">{resume}</div>
       <div>
         <button
           variant="contained"

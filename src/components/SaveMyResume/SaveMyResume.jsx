@@ -52,7 +52,7 @@ const SaveMyResume = (props) => {
           {savedResume !== null ? (
             <div style={{ opacity: isHovered ? 0.7 : 1 }}>
               {/* {savedResume.data} */}
-              {savedResume}
+              {/* {savedResume} */}
             </div>
           ) : (
             <p className="text-red-400">No Data</p>
@@ -72,8 +72,6 @@ const SaveMyResume = (props) => {
               alignItems: "center",
             }}
             onClick={downloadResume} //Download the Document
-            onMouseEnter={handleHover} // Handle hover enter event
-            onMouseLeave={handleHoverExit} // Handle hover exit event
             className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
           >
             Download

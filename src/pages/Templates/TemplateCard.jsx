@@ -1,6 +1,6 @@
 import React from "react";
 import { setTemplate, updateTemplate } from "../../Redux/Actions/setTemplate";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const TemplateCard = (props) => {
@@ -9,10 +9,10 @@ const TemplateCard = (props) => {
   const selectTemplate = () => {
     if (props.resume !== null) {
       // Update
-      props.updateTemplate(props);
+      props.updateTemplate(data);
     } else {
       // Set
-      props.setTemplate(props);
+      props.setTemplate(data);
     }
   };
 
