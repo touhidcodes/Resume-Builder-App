@@ -27,8 +27,13 @@ const fieldINC = {
   eLocation: "ELOC",
   about: "ABOT",
 
-  dob: "DOB",
-  objective: "OBJT",
+  /* Social information State*/
+  social: "SOCIAL",
+  link: "LINK",
+
+  /* Skills information State*/
+  skill: "SKILL",
+  rating: "RATING",
 };
 
 export default fieldINC;

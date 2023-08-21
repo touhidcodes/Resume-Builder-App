@@ -16,12 +16,8 @@ const EducationField = (props) => {
     control,
   } = useForm();
 
-  console.log(props);
-
   const onChange = (data, event) => {
     event.preventDefault();
-    console.log(data);
-    console.log(props);
 
     //  Collect Data From onChange Event and pass through Redux Store
     if (props.education !== null) {
@@ -35,6 +31,7 @@ const EducationField = (props) => {
 
   return (
     <div>
+      <h4 className="text-3xl font-semibold mb-5 mt-10">Educational Details</h4>
       <form onChange={handleSubmit(onChange)}>
         <div className="grid grid-cols-2 gap-5">
           {/* College/University Input */}
@@ -167,7 +164,6 @@ const EducationField = (props) => {
 const mapStateToProps = (state) => {
   return {
     education: state.educationalReducer,
-    resume: state.templateReducer,
   };
 };
 

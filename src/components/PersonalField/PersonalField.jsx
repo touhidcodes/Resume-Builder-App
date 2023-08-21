@@ -52,6 +52,7 @@ const PersonalField = (props) => {
           <select
             {...register(`${fieldINC.jobTitle}`, { required: true })}
             className="pl-1 text-lg outline-none border-b-2"
+            defaultValue=""
           >
             {titles.map((title, index) => (
               <option value={`${title}`} key={index}>
@@ -65,6 +66,7 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.firstName}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -88,6 +90,7 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.lastName}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -111,6 +114,7 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.country}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -134,6 +138,7 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.city}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -185,6 +190,7 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.email}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">

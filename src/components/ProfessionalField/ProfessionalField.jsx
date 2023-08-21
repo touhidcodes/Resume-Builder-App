@@ -43,6 +43,7 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.jobTitle_1}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -66,6 +67,7 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.company_1}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -89,6 +91,7 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.startedDate_1}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -112,6 +115,7 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.endDate_1}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -135,6 +139,7 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.location_1}
             control={control}
+            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">

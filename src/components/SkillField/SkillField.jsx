@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import { setSkills, updateSkills } from "../../Redux/Actions/setSkills";
 
 const SkillField = (props) => {
   const [skillsInput, setSkillsInput] = useState([{ skill: "", rating: "" }]);
@@ -21,17 +22,28 @@ const SkillField = (props) => {
 
   const onChange = (data, event) => {
     event.preventDefault();
+    console.log(props.skills);
+    //  Collect Data From onChange Event and pass through Redux Store
+    if (props.skills !== null) {
+      // Update
+      props.updateSkills(data);
+    } else {
+      // Set
+      props.setSkills(data);
+    }
     console.log(data);
   };
+
   return (
     <div>
+      <h4 className="text-3xl font-semibold mb-5 mt-10">Your Skills</h4>
       <form onChange={handleSubmit(onChange)}>
         {skillsInput.map((skill, index) => {
           return (
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-5" key={index}>
               {/* Skills input */}
               <Controller
-                name={`skill${index}`}
+                name={`${fieldINC.skill}${index}`}
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
@@ -55,7 +67,7 @@ const SkillField = (props) => {
               />
               {/* Skills Rating Input */}
               <Controller
-                name={`rating${index}`}
+                name={`${fieldINC.rating}${index}`}
                 control={control}
                 defaultValue=""
                 render={({ field }) => (
@@ -93,4 +105,19 @@ const SkillField = (props) => {
   );
 };
 
-export default SkillField;
+//  Mapping state from Redux to component props
+const mapStateToProps = (state) => {
+  return {
+    skills: state.skillsReducer,
+  };
+};
+
+// Mapping actions from Redux to component props
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSkills: (skill) => dispatch(setSkills(skill)),
+    updateSkills: (skill) => dispatch(updateSkills(skill)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SkillField);
