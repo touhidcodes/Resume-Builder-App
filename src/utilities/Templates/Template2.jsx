@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import "../TemplateCSS/Template2.css";
 
 const Template2 = (props) => {
   console.log("store", props.contact);

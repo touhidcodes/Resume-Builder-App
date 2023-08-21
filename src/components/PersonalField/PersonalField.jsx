@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import fieldINC from "../../utilities/INC/INC";
 import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
+import fieldINC from "../../utilities/INC/INC";
 import { setPersonal, updatePersonal } from "../../Redux/Actions/setPersonal";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -18,9 +18,8 @@ const PersonalField = (props) => {
 
   const onChange = (data, event) => {
     event.preventDefault();
-    // console.log(data);
+    console.log(data);
 
-    console.log("personal", props.personal);
     //  Collect Data From onChange Event and pass through Redux Store
     if (props.personal !== null) {
       // Update
@@ -31,32 +30,34 @@ const PersonalField = (props) => {
     }
   };
 
-  // onChange Handler to Get Input from Text Field
-  const handleInputChange = (field, event) => {
-    addToObject(field, event.target.value);
-    console.log("input", field, event.target.value);
-  };
+  const titles = [
+    "Select",
+    "Web Developer",
+    "Graphic Designer",
+    "Sales officer",
+    "Marketing Manager",
+    "SEO Analyst",
+    "Data Analyst",
+  ];
 
   return (
     <div>
+      <h4 className="text-3xl font-semibold mb-5">Personal Details</h4>
       <form onChange={handleSubmit(onChange)}>
         {/* Job Title Input */}
-        <div>
+        <div className="mb-5">
           <label className="label flex flex-row justify-start">
-            <span className=" font-semibold">Job Title:</span>
+            <span className="text-xl">Job Title:</span>
           </label>
           <select
             {...register(`${fieldINC.jobTitle}`, { required: true })}
             className="pl-1 text-lg outline-none border-b-2"
-            onChange={(e) => {
-              handleInputChange(`"${fieldINC.jobTitle}"`, e);
-            }}
           >
-            <option defaultValue={"Select One"}>Select One</option>
-            <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="c++">C++</option>
-            <option value="java">Java</option>
+            {titles.map((title, index) => (
+              <option value={`${title}`} key={index}>
+                {title}
+              </option>
+            ))}
           </select>
         </div>
         <div className="grid grid-cols-2 gap-5">
@@ -64,7 +65,6 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.firstName}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -88,7 +88,6 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.lastName}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -112,7 +111,6 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.country}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -136,7 +134,6 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.city}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -171,12 +168,14 @@ const PersonalField = (props) => {
                   <span className="text-xl">Phone Number:</span>
                 </label>
                 <PhoneInput
+                  // TODO: Type Number is to be changed
                   // type="number"
                   placeholder="Ex: +8801300000000"
                   className=" pl-1 text-lg outline-none border-b-2"
                   required
                   name={field.name}
                   value={value}
+                  // TODO: Phone Number input must pass by redux
                   onChange={setValues}
                 />
               </div>
@@ -186,7 +185,6 @@ const PersonalField = (props) => {
           <Controller
             name={fieldINC.email}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">

@@ -34,17 +34,19 @@ const ProfessionalField = (props) => {
 
   return (
     <div>
+      <h4 className="text-3xl font-semibold mb-5 mt-10">
+        Professional Summery
+      </h4>
       <form onChange={handleSubmit(onChange)}>
         <div className="grid grid-cols-2 gap-5">
           {/* Job Title Input */}
           <Controller
             name={fieldINC.jobTitle_1}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Job Title:</span>
+                  <span className="text-xl">Job Title at Company:</span>
                 </label>
                 <input
                   type="name"
@@ -64,11 +66,10 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.company_1}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
-                  <span className="text-xl">Company:</span>
+                  <span className="text-xl">Company Name:</span>
                 </label>
                 <input
                   type="name"
@@ -88,7 +89,6 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.startedDate_1}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -112,7 +112,6 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.endDate_1}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
@@ -136,7 +135,6 @@ const ProfessionalField = (props) => {
           <Controller
             name={fieldINC.location_1}
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <div className="form-control">
                 <label className="label flex flex-row justify-start">
