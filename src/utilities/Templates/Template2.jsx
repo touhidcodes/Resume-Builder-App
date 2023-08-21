@@ -1,19 +1,56 @@
 import React from "react";
 import { connect } from "react-redux";
 import "../TemplateCSS/Template2.css";
+import fieldINC from "../INC/INC";
 
 const Template2 = (props) => {
-  console.log("store", props.contact);
-  const contactData = props.contact;
+  console.log("store", props);
+  const personalData = props.personal;
+  const professionalData = props.professional;
+  const educationalData = props.education;
+  const socialData = props.social;
+  const skillsData = props.skills;
 
-  const getContactData = (key) => {
-    if (contactData && contactData[key]) {
-      return contactData[key];
+  // Function to get personal data based on key
+  const getPersonalData = (key) => {
+    if (personalData && personalData[key]) {
+      return personalData[key];
     }
-    return "hi";
+    return "";
   };
 
-  const experienceData = [];
+  // Function to get education data based on key
+  const getProfessionalData = (key) => {
+    if (professionalData && professionalData[key]) {
+      return professionalData[key];
+    }
+    return "";
+  };
+
+  // Function to get education data based on key
+  const getEducationalData = (key) => {
+    if (educationalData && educationalData[key]) {
+      return educationalData[key];
+    }
+    return "";
+  };
+
+  // Function to get social data based on key
+  const getSocialData = (key) => {
+    if (socialData && socialData[key]) {
+      return socialData[key];
+    }
+    return "";
+  };
+
+  // Function to get skills data based on key
+  const getSkillsData = (key) => {
+    if (skillsData && skillsData[key]) {
+      return skillsData[key];
+    }
+    return "";
+  };
+
   return (
     <div className="mx-auto">
       <div
@@ -50,8 +87,15 @@ const Template2 = (props) => {
           {/* Display contact information */}
           <p className="NAME">
             {/* {experienceData[maxKey].jobTitle} */}
-            Web Dev
+            {getPersonalData(fieldINC.firstName)} <span> </span>
+            {getPersonalData(fieldINC.lastName)}
           </p>
+          <p>{getPersonalData(fieldINC.jobTitle)}</p>
+          <p>
+            {getPersonalData(fieldINC.city)} <span> </span>
+            {getPersonalData(fieldINC.country)}
+          </p>
+          <p> {getPersonalData(fieldINC.email)}</p>
           <br />
           <hr />
           <br />
@@ -80,11 +124,8 @@ const Template2 = (props) => {
               color: "black",
             }}
           >
-            {/* {getcontactData(fieldCd.Objective)} */}
             Career obhective Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Dicta delectus eveniet beatae quia. Nobis neque sapiente,
-            officia temporibus officiis minus esse! Cupiditate consectetur
-            laudantium totam quo odit minima consequatur facere?
+            elit.
           </p>
 
           <div
@@ -101,22 +142,13 @@ const Template2 = (props) => {
           </div>
 
           {/* Display work experience */}
-          {Object.keys(experienceData).map((key) => (
-            <div key={key}>
-              <h1 style={{ fontWeight: "bold", paddingTop: "5px" }}>
-                {experienceData[key].jobTitle}
-              </h1>
-              <p>{experienceData[key].organizationName}</p>
-              <p style={{ color: "blue", paddingBottom: "5px" }}>
-                <span style={{ color: "black" }}>From</span>{" "}
-                {experienceData[key].startYear}{" "}
-                <span style={{ color: "black" }}>To</span>{" "}
-                {experienceData[key].endYear}
-              </p>
-              <hr />
-            </div>
-          ))}
-
+          <p>{getProfessionalData(fieldINC.jobTitle_1)}</p>
+          <p>{getProfessionalData(fieldINC.company_1)}</p>
+          <p>
+            {getProfessionalData(fieldINC.startedDate_1)} to{" "}
+            {getProfessionalData(fieldINC.endDate_1)}
+          </p>
+          <p>{getProfessionalData(fieldINC.location_1)}</p>
           <h1 style={{ paddingTop: "5px" }}></h1>
           <div
             style={{
@@ -139,39 +171,33 @@ const Template2 = (props) => {
               paddingTop: "5px",
               color: "black",
             }}
-          >
-            {/* {geteducationData(fieldCd.Type)}: */}
-            BSc:
-          </h1>
+          ></h1>
           <p
             className="university"
             style={{ height: "auto", width: "90%", color: "black" }}
           >
-            {/* {geteducationData(fieldCd.University)} */}
-            BSMRSTU
+            {getEducationalData(fieldINC.university)}
           </p>
           <p
             className="degree"
             style={{ height: "auto", width: "90%", color: "black" }}
           >
-            {/* {geteducationData(fieldCd.Degree)}. */}
-            BSc. in Biochemistry and Mol Bio.
+            {getEducationalData(fieldINC.degree)}
           </p>
           <p
             className="duration"
             style={{ height: "auto", width: "90%", color: "black" }}
           >
             <span style={{ color: "blue" }}>
-              {/* {geteducationData(fieldCd.Startyear)} */}
-              2022
+              {getEducationalData(fieldINC.startedYear)}
             </span>
             to
             <span style={{ color: "blue" }}>
-              {/* {geteducationData(fieldCd.Endyear)} */}
-              2023
+              {getEducationalData(fieldINC.endYear)}
             </span>
             .
           </p>
+          <p>{getEducationalData(fieldINC.eLocation)}</p>
         </div>
       </div>
     </div>
@@ -181,7 +207,11 @@ const Template2 = (props) => {
 const mapStateToProps = (state) => {
   return {
     // Assigning contactReducer state to 'contact' prop
-    contact: state.contactReducer,
+    personal: state.personalReducer,
+    professional: state.professionalReducer,
+    education: state.educationalReducer,
+    social: state.socialReducer,
+    skills: state.skillsReducer,
   };
 };
 export default connect(mapStateToProps)(Template2);

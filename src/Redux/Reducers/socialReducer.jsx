@@ -1,4 +1,4 @@
-import initialState from "../Reducers/initialState.json";
+import initialState from "./initialState.json";
 import { SET_SOCIAL, UPDATE_SOCIAL } from "../ActionCreators/ActionCreators";
 
 //  Social Information state Reducer

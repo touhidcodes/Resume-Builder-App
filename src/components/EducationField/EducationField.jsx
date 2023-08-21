@@ -27,6 +27,7 @@ const EducationField = (props) => {
       // Set
       props.setEducation(data);
     }
+    console.log(data);
   };
 
   return (
