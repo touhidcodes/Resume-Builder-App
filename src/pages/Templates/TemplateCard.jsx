@@ -6,32 +6,21 @@ import { connect } from "react-redux";
 const TemplateCard = (props) => {
   const { id, type, thumbnail, data } = props;
 
-  // const TemplateData = resume;
-  const navigate = useNavigate();
-
-  const selectTemplate = (data) => {
-    console.log(props.resume);
-
+  const selectTemplate = () => {
     if (props.resume !== null) {
       // Update
-      updateTemplate(data);
+      props.updateTemplate(props);
     } else {
       // Set
-      setTemplate(data);
+      props.setTemplate(props);
     }
-    console.log(data);
   };
-  console.log(props);
+
   return (
     <div>
       <img src={thumbnail} alt="" className="h-96 w-96" />
       <Link to={`/resume/${id}`}>
-        <button
-          className="btn btn-primary mt-5"
-          onClick={() => {
-            selectTemplate(data);
-          }}
-        >
+        <button className="btn btn-primary mt-5" onClick={selectTemplate}>
           Use Templates
         </button>
       </Link>
