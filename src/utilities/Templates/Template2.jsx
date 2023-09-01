@@ -61,7 +61,6 @@ const Template2 = (props) => {
           border: "1px solid black",
           padding: 10,
           backgroundColor: "white",
-          backgroundColor: "white",
         }}
       >
         <div
