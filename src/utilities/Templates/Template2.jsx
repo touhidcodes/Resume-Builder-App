@@ -54,11 +54,13 @@ const Template2 = (props) => {
   return (
     <div className="mx-auto">
       <div
-        className="container w-full"
+        className="container"
         style={{
           height: "113vh",
+          width: "100vh",
           border: "1px solid black",
           padding: 10,
+          backgroundColor: "white",
           backgroundColor: "white",
         }}
       >
