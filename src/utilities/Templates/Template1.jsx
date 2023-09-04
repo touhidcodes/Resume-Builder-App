@@ -34,13 +34,6 @@ const Template1 = (props) => {
     }
     return "";
   };
-  // Function to get education data based on key
-  const getEducationData2 = (key) => {
-    if (educationData && educationData[key]) {
-      return educationData[key];
-    }
-    return "";
-  };
 
   return (
     <div>
