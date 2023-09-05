@@ -40,10 +40,29 @@ const PersonalField = (props) => {
     "Data Analyst",
   ];
 
+  const [selected, setSelected] = useState(false);
   return (
     <div>
-      <h4 className="text-3xl font-semibold mb-5">Personal Details</h4>
-      <form onChange={handleSubmit(onChange)}>
+      <div className="flex flex-row">
+        <div
+          className={`rounded-full transition duration-500 ease-in-out border-2  h-10 w-10 flex items-center justify-center py-3 ${
+            selected
+              ? "bg-blue-600 border-blue-600 text-white"
+              : "border-blue-600"
+          } `}
+        >
+          {/* Number {index} */} 1
+        </div>
+        <div className="pl-3">
+          <h4 className="text-3xl font-semibold mb-5">Personal Details</h4>
+        </div>
+      </div>
+      <form
+        onChange={handleSubmit(onChange)}
+        className={` flex-auto border-l-2 transition duration-500 ease-in-out w-full pl-5 ml-5 ${
+          selected && "border-blue-600"
+        }`}
+      >
         {/* Job Title Input */}
         <div className="mb-5">
           <label className="label flex flex-row justify-start">
