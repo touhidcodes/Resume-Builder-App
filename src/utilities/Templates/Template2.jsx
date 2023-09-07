@@ -1,3 +1,5 @@
+import { Container } from "@mui/system";
+import { Paper } from "@mui/material";
 import React from "react";
 import { connect } from "react-redux";
 import "../TemplateCSS/Template2.css";
@@ -52,156 +54,39 @@ const Template2 = (props) => {
   };
 
   return (
-    <div className="mx-auto">
-      <div
-        className="container"
-        style={{
-          height: "113vh",
-          width: "100vh",
-          border: "1px solid black",
-          padding: 10,
-          backgroundColor: "white",
-        }}
-      >
-        <div
-          style={{
-            padding: "1% 1%",
-            float: "left",
-            width: "36%",
-            height: "110vh",
-            backgroundColor: "rgb(227, 227, 227)",
-          }}
-        >
-          <h1
-            style={{
-              height: "4vh",
-              width: "90%",
-              color: "white",
-              backgroundColor: "black",
-              marginBottom: "10px",
-              textAlign: "center",
-              marginTop: "8vh",
-            }}
-          >
-            PERSONAL INFO
-          </h1>
-          {/* Display contact information */}
-          <p className="NAME">
-            {/* {experienceData[maxKey].jobTitle} */}
-            {getPersonalData(fieldINC.firstName)} <span> </span>
-            {getPersonalData(fieldINC.lastName)}
-          </p>
-          <p>{getPersonalData(fieldINC.jobTitle)}</p>
-          <p>
-            {getPersonalData(fieldINC.city)} <span> </span>
-            {getPersonalData(fieldINC.country)}
-          </p>
-          <p> {getPersonalData(fieldINC.email)}</p>
-          <br />
-          <hr />
-          <br />
+    <Paper
+      sx={{
+        // height: "700px",
+        // width: "600px"
+        width: {
+          xs: "350px",
+          sm: "400px",
+          md: "450px",
+          lg: "500px",
+          xl: "600px",
+        },
+        height: {
+          xs: "500px",
+          sm: "550px",
+          md: "600px",
+          lg: "650px",
+          xl: "700px",
+        },
 
-          <div
-            style={{
-              width: "100%",
-              height: "4vh",
-              color: "white",
-              backgroundColor: "black",
-              textAlign: "center",
-              color: "white",
-            }}
-          >
-            OBJECTIVE
-          </div>
-
-          {/* Display objective */}
-          <p
-            className="OBJECTIVE"
-            style={{
-              height: "auto",
-              width: "90%",
-              paddingTop: "5px",
-              paddingBottom: "5px",
-              color: "black",
-            }}
-          >
-            Career obhective Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.
-          </p>
-
-          <div
-            style={{
-              height: "4vh",
-              width: "100%",
-              color: "white",
-              backgroundColor: "black",
-            }}
-          >
-            <h1 style={{ textAlign: "center", color: "white" }}>
-              WORK EXPERIENCE
-            </h1>
-          </div>
-
-          {/* Display work experience */}
-          <p>{getProfessionalData(fieldINC.jobTitle_1)}</p>
-          <p>{getProfessionalData(fieldINC.company_1)}</p>
-          <p>
-            {getProfessionalData(fieldINC.startedDate_1)} to{" "}
-            {getProfessionalData(fieldINC.endDate_1)}
-          </p>
-          <p>{getProfessionalData(fieldINC.location_1)}</p>
-          <h1 style={{ paddingTop: "5px" }}></h1>
-          <div
-            style={{
-              height: "4vh",
-              width: "100%",
-              color: "white",
-              backgroundColor: "black",
-            }}
-          >
-            <h1 style={{ textAlign: "center", color: "white" }}>EDUCATION</h1>
-          </div>
-          {/* Display education details */}
-          <h1
-            className="type"
-            style={{
-              height: "auto",
-              width: "90%",
-              fontWeight: "bold",
-              fontSize: "115%",
-              paddingTop: "5px",
-              color: "black",
-            }}
-          ></h1>
-          <p
-            className="university"
-            style={{ height: "auto", width: "90%", color: "black" }}
-          >
-            {getEducationalData(fieldINC.university)}
-          </p>
-          <p
-            className="degree"
-            style={{ height: "auto", width: "90%", color: "black" }}
-          >
-            {getEducationalData(fieldINC.degree)}
-          </p>
-          <p
-            className="duration"
-            style={{ height: "auto", width: "90%", color: "black" }}
-          >
-            <span style={{ color: "blue" }}>
-              {getEducationalData(fieldINC.startedYear)}
-            </span>
-            to
-            <span style={{ color: "blue" }}>
-              {getEducationalData(fieldINC.endYear)}
-            </span>
-            .
-          </p>
-          <p>{getEducationalData(fieldINC.eLocation)}</p>
+        "& .MuiContainer-maxWidthLg": {
+          maxWidth: "100%",
+        },
+      }}
+      className="mx-auto"
+      maxWidth={false}
+    >
+      <Container>
+        <div className="grid grid-cols-2">
+          <div className="bg-red-400 h-[500px] w-full">hi</div>
+          <div></div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Paper>
   );
 };
 

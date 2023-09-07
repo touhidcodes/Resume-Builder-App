@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.8",
+    "@mui/styled-engine-sc": "^5.14.8",
+    "@mui/system": "^5.14.8",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "localforage": "^1.10.0",
@@ -22,7 +27,8 @@
     "react-router-dom": "^6.14.2",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
