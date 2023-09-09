@@ -11,26 +11,13 @@ const SaveMyResume = (props) => {
   // Receiving props from Reducer
   const savedResume = props.resume;
 
-  // State for hover effect
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Function to handle hover enter event
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  // Function to handle hover exit event
-  const handleHoverExit = () => {
-    setIsHovered(false);
-  };
-
   // Function to download the resume as PDF
   const downloadResume = async () => {
     const input = document.getElementById("download");
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF("p", "mm", "a4");
+        const pdf = new jsPDF("p", "pt", "a4");
         var width = pdf.internal.pageSize.getWidth();
         var height = pdf.internal.pageSize.getHeight();
         pdf.addImage(imgData, "JPEG", 0, 0, width, height);
@@ -43,16 +30,14 @@ const SaveMyResume = (props) => {
 
   return (
     <div>
-      <div
-        className="flex py-8 px-8 justify-center items-center relative"
-        onMouseEnter={handleHover}
-        onMouseLeave={handleHoverExit}
-      >
+      ------------------------------- --------------------------------
+      <div className="flex py-8 px-8 justify-center items-center relative">
         <div id="download">
           {savedResume !== null ? (
-            <div style={{ opacity: isHovered ? 0.7 : 1 }}>
+            <div>
               {/* {savedResume.data} */}
               {/* {savedResume} */}
+              Data Consist
             </div>
           ) : (
             <p className="text-red-400">No Data</p>

@@ -28,17 +28,19 @@ const ResumePreview = (props) => {
       });
   };
   return (
-    <div>
-      Preview
-      <div id="download">{resume}</div>
+    <div className="grid grid-cols-2">
       <div>
+        <div id="download">{resume}</div>
+      </div>
+      <div className="flex justify-center items-center">
         <button
-          variant="contained"
-          color="primary"
-          onClick={downloadResume} //Download the Document
           className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
+          onClick={downloadResume}
         >
           Download
+        </button>
+        <button className="bg-red-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded ml-10">
+          Preview
         </button>
       </div>
     </div>

@@ -9,7 +9,7 @@ import SaveMyResume from "../../components/SaveMyResume/SaveMyResume";
 
 const ResumeBuilder = (props) => {
   const downloadResume = async () => {
-    const input = document.getElementById("download");
+    const input = document.getElementById("download-resume");
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
@@ -33,8 +33,21 @@ const ResumeBuilder = (props) => {
         <ResumeForm />
       </div>
       <div>
+        {/* <div className="flex justify-center">
+          <button
+            className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
+            onClick={downloadResume}
+          >
+            Download
+          </button>
+          <button className="bg-red-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded ml-10">
+            Preview
+          </button>
+        </div> */}
         <div className="p-10 bg-base-200 min-h-screen">
-          {allData.map((item) => (item.id == resume.id ? item.data : ""))}
+          <div className="download-resume">
+            {allData.map((item) => (item.id == resume.id ? item.data : ""))}
+          </div>
         </div>
       </div>
     </div>
