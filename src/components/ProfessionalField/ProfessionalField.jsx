@@ -159,6 +159,29 @@ const ProfessionalField = (props) => {
               </div>
             )}
           />
+          <Controller
+            name={fieldINC.location_1}
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <div className="form-control">
+                <label className="label flex flex-row justify-start">
+                  <span className="text-xl">Location:</span>
+                </label>
+                <input
+                  type="name"
+                  placeholder="Ex: Dhaka, Bangladesh"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
+                  required
+                  name={field.name}
+                  value={field.value}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
+                />
+              </div>
+            )}
+          />
         </div>
       </form>
     </div>
