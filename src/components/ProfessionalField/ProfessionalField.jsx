@@ -169,7 +169,6 @@ const ProfessionalField = (props) => {
 const mapStateToProps = (state) => {
   return {
     professional: state.professionalReducer,
-    professional2: state.professionalReducer,
   };
 };
 
