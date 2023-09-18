@@ -111,6 +111,29 @@ const ProfessionalField = (props) => {
               </div>
             )}
           />
+          <Controller
+            name={fieldINC.startedDate_1}
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <div className="form-control">
+                <label className="label flex flex-row justify-start">
+                  <span className="text-xl">Started Date:</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Ex: JAN 2023"
+                  className="pl-2 py-1 text-lg outline-none bg-base-300 rounded-sm"
+                  required
+                  name={field.name}
+                  value={field.value}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
+                />
+              </div>
+            )}
+          />
           {/* End Date Input */}
           <Controller
             name={fieldINC.endDate_1}
