@@ -56,146 +56,21 @@ const Template2 = (props) => {
   return (
     <>
       <div
-        className="container"
+        className=""
         style={{
-          width: "100vh",
+          width: "93vh",
           height: "113vh",
-          border: "1px solid black",
-          padding: 10,
+
           backgroundColor: "white",
         }}
       >
-        <div
-          style={{
-            padding: "1% 1%",
-            float: "left",
-            width: "36%",
-            height: "110vh",
-            backgroundColor: "rgb(227, 227, 227)",
-          }}
-        >
-          <h1
-            style={{
-              height: "4vh",
-              width: "90%",
-              color: "white",
-              backgroundColor: "black",
-              marginBottom: "10px",
-              textAlign: "center",
-              marginTop: "8vh",
-            }}
-          >
-            PERSONAL INFO
-          </h1>
-          {/* Display contact information */}
-
-          <p>Experience Data</p>
-
-          <br />
-          <hr />
-          <br />
-
-          <div
-            style={{
-              width: "100%",
-              height: "4vh",
-              color: "white",
-              backgroundColor: "black",
-              textAlign: "center",
-              color: "white",
-            }}
-          >
-            OBJECTIVE
-          </div>
-
-          {/* Display objective */}
-          <p
-            className="OBJECTIVE"
-            style={{
-              height: "auto",
-              width: "90%",
-              paddingTop: "5px",
-              paddingBottom: "5px",
-              color: "black",
-            }}
-          >
-            Objective
-          </p>
-
-          <div
-            style={{
-              height: "4vh",
-              width: "100%",
-              color: "white",
-              backgroundColor: "black",
-            }}
-          >
-            <h1 style={{ textAlign: "center", color: "white" }}>
-              WORK EXPERIENCE
-            </h1>
-          </div>
-
-          {/* Display work experience */}
-          {/* {Object.keys(experienceData).map((key) => (
-            <div key={key}>
-              <h1 style={{ fontWeight: "bold", paddingTop: "5px" }}>
-                {experienceData[key].jobTitle}
-              </h1>
-              <p>{experienceData[key].organizationName}</p>
-              <p style={{ color: "blue", paddingBottom: "5px" }}>
-                <span style={{ color: "black" }}>From</span>{" "}
-                {experienceData[key].startYear}{" "}
-                <span style={{ color: "black" }}>To</span>{" "}
-                {experienceData[key].endYear}
-              </p>
-              <hr />
-            </div>
-          ))} */}
-
-          <h1 style={{ paddingTop: "5px" }}></h1>
-          <div
-            style={{
-              height: "4vh",
-              width: "100%",
-              color: "white",
-              backgroundColor: "black",
-            }}
-          >
-            <h1 style={{ textAlign: "center", color: "white" }}>EDUCATION</h1>
-          </div>
-          {/* Display education details */}
-          <h1
-            className="type"
-            style={{
-              height: "auto",
-              width: "90%",
-              fontWeight: "bold",
-              fontSize: "115%",
-              paddingTop: "5px",
-              color: "black",
-            }}
-          >
-            Type
-          </h1>
-          <p
-            className="university"
-            style={{ height: "auto", width: "90%", color: "black" }}
-          >
-            University
-          </p>
-          <p
-            className="degree"
-            style={{ height: "auto", width: "90%", color: "black" }}
-          >
-            Degree
-          </p>
-          <p
-            className="duration"
-            style={{ height: "auto", width: "90%", color: "black" }}
-          >
-            <span style={{ color: "blue" }}>S yr</span> to{" "}
-            <span style={{ color: "blue" }}>E yr</span>.
-          </p>
+        {/* <div className="flex flex-row">
+          <div className=" h-full w-1/2 bg-red-400">hi</div>
+          <div className=" h-full w-1/2 bg-red-700">hello</div>{" "}
+        </div> */}
+        <div className="grid grid-cols-2">
+          <div className=" bg-red-400">hi</div>
+          <div className=" bg-red-700">hello</div>{" "}
         </div>
       </div>
     </>
