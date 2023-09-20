@@ -16,12 +16,12 @@ const ResumePreview = (props) => {
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/jpeg");
         const pdf = new jsPDF("p", "mm", "a4");
-        var width = pdf.internal.pageSize.getWidth();
-        var height = pdf.internal.pageSize.getHeight();
-        // var width = 208;
-        // var height = (canvas.height * width) / canvas.width;
+        // var width = pdf.internal.pageSize.getWidth();
+        // var height = pdf.internal.pageSize.getHeight();
+        var width = 208;
+        var height = (canvas.height * width) / canvas.width;
         // console.log(height);
-        pdf.addImage(canvas, "JPEG", 0, 0, width, height);
+        pdf.addImage(imgData, "JPEG", 0, 0, width, height);
         pdf.save(`MyResume.pdf`);
       })
       .catch(function (error) {
