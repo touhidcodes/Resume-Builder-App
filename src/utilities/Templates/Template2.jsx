@@ -4,6 +4,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "../TemplateCSS/Template2.css";
 import fieldINC from "../INC/INC";
+import "../TemplateCSS/Template2.css";
 
 const Template2 = (props) => {
   console.log("store", props);
@@ -54,26 +55,31 @@ const Template2 = (props) => {
   };
 
   return (
-    <>
-      <div
-        className=""
-        style={{
-          width: "93vh",
-          height: "113vh",
+    <div
+      className=""
+      style={{
+        width: "93vh",
+        height: "113vh",
 
-          backgroundColor: "white",
-        }}
-      >
-        {/* <div className="flex flex-row">
-          <div className=" h-full w-1/2 bg-red-400">hi</div>
-          <div className=" h-full w-1/2 bg-red-700">hello</div>{" "}
-        </div> */}
-        <div className="grid grid-cols-2">
-          <div className=" bg-red-400">hi</div>
-          <div className=" bg-red-700">hello</div>{" "}
-        </div>
+        backgroundColor: "white",
+      }}
+    >
+      <div className="contact-info education">
+        <div className="title">Education</div>
+        <ul>
+          <li>
+            <h5>2010-2013</h5>
+            <h4>Master Degree in computer Science</h4>
+            <h4>Harvard University</h4>
+          </li>
+          <li>
+            <h5>2007-2010</h5>
+            <h4>Bachelor Degree in computer Science</h4>
+            <h4>Harvard University</h4>
+          </li>
+        </ul>
       </div>
-    </>
+    </div>
   );
 };
 
