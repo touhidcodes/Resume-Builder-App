@@ -58,7 +58,8 @@ const Template2 = (props) => {
       className=""
       style={{
         width: "93vh",
-        height: "113vh",
+        // height: "113vh",
+        height: "155vh",
 
         backgroundColor: "white",
       }}
@@ -178,7 +179,7 @@ const Template2 = (props) => {
           </div>
           {/* Professional Skills  */}
           <div className="about skills">
-            <h2 className="title2">Professional Skills</h2>
+            <h2 className="font-bold">Professional Skills</h2>
             <div className="box">
               <h4>HTML</h4>
               <div className="percent"></div>
