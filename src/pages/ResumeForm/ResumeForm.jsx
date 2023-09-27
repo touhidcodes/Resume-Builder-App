@@ -14,7 +14,6 @@ const ResumeForm = () => {
         <h4 className="text-4xl text-center">Name Of CV</h4>
         <PersonalField />
         <ProfessionalField />
-        <ProfessionalField />
         <EducationField />
         <SocialField />
         <SkillField />
