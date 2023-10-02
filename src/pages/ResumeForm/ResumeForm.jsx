@@ -16,8 +16,6 @@ const ResumeForm = () => {
         <ProfessionalField />
         <EducationField />
         <SocialField />
-        <SocialField />
-        <SkillField />
         <SkillField />
         <SaveMyResume downloadResume />
         <div>
