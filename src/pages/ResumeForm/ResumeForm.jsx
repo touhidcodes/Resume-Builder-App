@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 const ResumeForm = () => {
   return (
     <div className="fixed overflow-y-scroll h-full">
-      <div className="space-y-5  pr-10">
-        <h4 className="text-4xl text-center">Name Of CV</h4>
+      <div className="pr-8">
+        <h4 className="text-4xl text-center mb-10">Name Of CV</h4>
         <PersonalField />
         <ProfessionalField />
         <EducationField />
