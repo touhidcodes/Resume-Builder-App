@@ -66,11 +66,11 @@ const Template2 = (props) => {
     >
       <div className="flex flex-row">
         <div className="w-1/2 bg-zinc-500">
-          <div className="flex justify-center mt-5 mb-5">
+          <div className="flex justify-center mt-10 mb-5">
             <img
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
               alt=""
-              className="h-32 w-32 rounded-full"
+              className="h-40 w-40 rounded-full"
             />
           </div>
           <div className="text-center text-white">
@@ -79,12 +79,12 @@ const Template2 = (props) => {
               {`${getPersonalData(fieldINC.lastName)}` || "Name"}
               <br />
             </h2>
-            <h4> {getPersonalData(fieldINC.jobTitle)} </h4>
+            <h4> {`${getPersonalData(fieldINC.jobTitle)}` || "Job Title"}</h4>
           </div>
           {/* contact */}
-          <div className="text-white mt-5">
-            <div className="text-center font-bold">Contact Info</div>
-            <div className="flex justify-center mt-2">
+          <div className="text-white mt-10 px-5">
+            <div className="font-bold uppercase">Contact Info</div>
+            <div className=" mt-1">
               <ul>
                 <li>
                   {`${getPersonalData(fieldINC.phone)}` || " +8801234567890"}
@@ -93,8 +93,6 @@ const Template2 = (props) => {
                   {`${getPersonalData(fieldINC.email)}` ||
                     "youremail@domain.com"}
                 </li>
-                <li>www.mywebsite.com</li>
-                <li>www.linkedin.com/me</li>
                 <li>
                   {`${getPersonalData(fieldINC.city)}` || "City"}
                   {", "}
@@ -104,18 +102,25 @@ const Template2 = (props) => {
             </div>
           </div>
           {/* Education */}
-          <div className="text-white mt-5 px-3">
-            <div className="font-bold">Education</div>
-            <ul className="mt-3">
+          <div className="text-white mt-5 px-5">
+            <div className="font-bold uppercase">Education</div>
+            <ul className="mt-1">
               <li>
-                <h5>2010-2013</h5>
-                <h4>Master Degree in computer Science</h4>
-                <h4>Harvard University</h4>
-              </li>
-              <li>
-                <h5>2007-2010</h5>
-                <h4>Bachelor Degree in computer Science</h4>
-                <h4>Harvard University</h4>
+                <h5>
+                  {`${getEducationalData(fieldINC.startedYear)}` || "JAN 2000"}
+                  {" - "}
+                  {`${getEducationalData(fieldINC.endYear)}` || "DEC 2002"}
+                </h5>
+                <h4>
+                  {`${getEducationalData(fieldINC.degree)}` || "Your Degree"}
+                </h4>
+                <h4>
+                  {`${getEducationalData(fieldINC.university)}` ||
+                    "Your University"}
+                </h4>
+                <h4>
+                  {`${getEducationalData(fieldINC.eLocation)}` || "Location"}
+                </h4>
               </li>
             </ul>
           </div>
