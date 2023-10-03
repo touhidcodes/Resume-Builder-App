@@ -64,9 +64,29 @@ const SocialField = (props) => {
     console.log(data);
   };
 
+  const [selected, setSelected] = useState(false);
   return (
     <div>
-      <form onChange={handleSubmit(onChange)}>
+      <div className="flex flex-row">
+        <div
+          className={`rounded-full transition duration-500 ease-in-out border-2  h-10 w-10 flex items-center justify-center py-3 ${
+            selected
+              ? "bg-blue-600 border-blue-600 text-white"
+              : "border-blue-600"
+          } `}
+        >
+          {/* Number {index} */} 4
+        </div>
+        <div className="pl-3">
+          <h4 className="text-3xl font-medium">Social Links</h4>
+        </div>
+      </div>
+      <form
+        onChange={handleSubmit(onChange)}
+        className={` flex-auto border-l-2 transition duration-500 ease-in-out w-full pl-5 ml-5 pt-5 pb-10  ${
+          selected && "border-blue-600"
+        }`}
+      >
         {socials.map((social, index) => {
           return (
             <div key={index}>
@@ -129,7 +149,7 @@ const SocialField = (props) => {
         })}
         <div className="text-center mt-5">
           <button onClick={addSocialField}>
-            <div className="text-blue-600 font-semibold flex flex-row items-center">
+            <div className="text-blue-600 font-medium flex flex-row items-center">
               <Icon icon="gala:add" className="h-6 w-6" />
               <h1 className="text-lg ml-2">Add More Field</h1>
             </div>

@@ -30,7 +30,6 @@ const SaveMyResume = (props) => {
 
   return (
     <div>
-      ------------------------------- --------------------------------
       <div className="flex py-8 px-8 justify-center items-center relative">
         <div id="download">
           {savedResume !== null ? (
