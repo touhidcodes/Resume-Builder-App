@@ -200,7 +200,10 @@ const PersonalField = (props) => {
                   name={field.name}
                   value={value}
                   // TODO: Phone Number input must pass by redux
-                  onChange={setValues}
+                  // onChange={setValues}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
                 />
               </div>
             )}

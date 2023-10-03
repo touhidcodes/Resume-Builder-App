@@ -75,20 +75,31 @@ const Template2 = (props) => {
           </div>
           <div className="text-center text-white">
             <h2 className="font-bold text-xl">
-              Ciris Hamsworth <br />
+              {`${getPersonalData(fieldINC.firstName)}` || "Your"}{" "}
+              {`${getPersonalData(fieldINC.lastName)}` || "Name"}
+              <br />
             </h2>
-            <h4> Business man </h4>
+            <h4> {getPersonalData(fieldINC.jobTitle)} </h4>
           </div>
           {/* contact */}
           <div className="text-white mt-5">
             <div className="text-center font-bold">Contact Info</div>
             <div className="flex justify-center mt-2">
               <ul>
-                <li>+8801234567890</li>
-                <li>hamsworth@gmail.com</li>
+                <li>
+                  {`${getPersonalData(fieldINC.phone)}` || " +8801234567890"}
+                </li>
+                <li>
+                  {`${getPersonalData(fieldINC.email)}` ||
+                    "youremail@domain.com"}
+                </li>
                 <li>www.mywebsite.com</li>
                 <li>www.linkedin.com/me</li>
-                <li>Gopalganj, Dhaka</li>
+                <li>
+                  {`${getPersonalData(fieldINC.city)}` || "City"}
+                  {", "}
+                  {`${getPersonalData(fieldINC.country)}` || "Country"}
+                </li>
               </ul>
             </div>
           </div>
