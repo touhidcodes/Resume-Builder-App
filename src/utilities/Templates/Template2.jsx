@@ -124,29 +124,46 @@ const Template2 = (props) => {
               </li>
             </ul>
           </div>
-          {/* Language  */}
-          <div className="contact-info language px-5">
-            <div className="title">Language</div>
+          {/* Social Links  */}
+          <div className="px-5 mt-5 text-white">
+            <div className="font-bold uppercase">Social Links</div>
             <ul>
               <li>
-                <span className="text">Bangla</span>
-                <span className="percent"></span>
+                <span className="">
+                  {" "}
+                  {socialData ? socialData.SOCIAL0 : "Social"}
+                </span>
+                {": "}
+                <span className="">
+                  {socialData ? socialData.LINK0 : "LInk"}
+                </span>
               </li>
               <li>
-                <span className="text">English</span>
-                <span className="percent"></span>
+                <span className="">
+                  {" "}
+                  {socialData ? socialData.SOCIAL1 : "Social"}
+                </span>
+                {": "}
+                <span className="">
+                  {socialData ? socialData.LINK1 : "LInk"}
+                </span>
               </li>
               <li>
-                <span className="text">German</span>
-                <span className="percent"></span>
+                <span className="">
+                  {socialData ? socialData.SOCIAL2 : "Social"}
+                </span>
+                {": "}
+                <span className="">
+                  {socialData ? socialData.LINK2 : "LInk"}
+                </span>
               </li>
             </ul>
           </div>
         </div>
-        <div className="w-1/2 bg-blue-400 px-3 pt-2">
+        <div className="w-1/2 bg-blue-400 px-5 pt-5">
           {/* Experience  */}
           <div className="">
-            <h2 className="font-bold">Profile</h2>
+            <h2 className="uppercase font-bold">Career Objectives</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi
               tenetur eos doloribus fuga delectus? Aut porro itaque omnis minima
@@ -154,72 +171,33 @@ const Template2 = (props) => {
               saepe culpa optio quidem
             </p>
           </div>
-          <div className="">
-            <h2 className="font-bold">Experience</h2>
-            <div className="box">
-              <div className="year_company">
-                <h5>2019 - present</h5>
-                <h5>Company Name</h5>
-              </div>
-              <div className="text">
-                <h4>Senior UX Designer</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="year_company">
-                <h5>2016 - 2018</h5>
-                <h5>Company Name</h5>
-              </div>
-              <div className="text">
-                <h4>UI/UX Designer</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="year_company">
-                <h5>2014 - 2016</h5>
-                <h5>Company Name</h5>
-              </div>
-              <div className="text">
-                <h4>Junior UX Designer</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-                </p>
-              </div>
+          <div>
+            <h2 className="font-bold uppercase mt-5">Experience</h2>
+            <div>
+              <h5>
+                {`${getProfessionalData(fieldINC.startedDate_1)}` || "JAN 2000"}
+                {" - "}
+                {`${getProfessionalData(fieldINC.endDate_1)}` || "DEC 2002"}
+              </h5>
+              <h5>
+                {`${getProfessionalData(fieldINC.company_1)}` || "Your Company"}
+              </h5>
+              <h4>
+                {`${getProfessionalData(fieldINC.jobTitle_1)}` ||
+                  "Job Title in your Company"}
+              </h4>
+              <h4>
+                {`${getProfessionalData(fieldINC.location_1)}` || "Location"}
+              </h4>
             </div>
           </div>
           {/* Professional Skills  */}
-          <div className="about skills">
-            <h2 className="font-bold">Professional Skills</h2>
-            <div className="box">
-              <h4>HTML</h4>
-              <div className="percent"></div>
-            </div>
-            <div className="box">
-              <h4>CSS</h4>
-              <div className="percent"></div>
-            </div>
-            <div className="box">
-              <h4>JavaScript</h4>
-              <div className="percent"></div>
-            </div>
-            <div className="box">
-              <h4>Photoshop</h4>
-              <div className="percent"></div>
-            </div>
-            <div className="box">
-              <h4>Illustrator</h4>
-              <div className="percent"></div>
-            </div>
-            <div className="box">
-              <h4>Adobe XD</h4>
-              <div className="percent"></div>
-            </div>
+          <div className="mt-5">
+            <h2 className="font-bold uppercase">Professional Skills</h2>
+            <h4>
+              {skillsData ? socialData.SKILL0 : "Skill"}:{" "}
+              {skillsData ? socialData.RATING1 : "Ratings"}
+            </h4>
           </div>
         </div>
       </div>

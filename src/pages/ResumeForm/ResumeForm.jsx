@@ -6,7 +6,7 @@ import SkillField from "../../components/SkillField/SkillField";
 import SocialField from "../../components/SocialField/SocialField";
 import SaveMyResume from "../../components/SaveMyResume/SaveMyResume";
 import { Link } from "react-router-dom";
-import AddMoreField from "../../components/AddMoreField/AddMoreField";
+import AddMoreField from "../../components/AddMoreFields/AddMoreField";
 
 const ResumeForm = () => {
   return (
