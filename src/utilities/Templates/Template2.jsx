@@ -195,8 +195,16 @@ const Template2 = (props) => {
           <div className="mt-5">
             <h2 className="font-bold uppercase">Professional Skills</h2>
             <h4>
-              {skillsData ? socialData.SKILL0 : "Skill"}:{" "}
-              {skillsData ? socialData.RATING1 : "Ratings"}
+              {skillsData ? skillsData.SKILL0 : "Skill"}:{" "}
+              {skillsData ? skillsData.RATING0 : "Ratings"}
+            </h4>
+            <h4>
+              {skillsData ? skillsData.SKILL1 : "Skill"}:{" "}
+              {skillsData ? skillsData.RATING1 : "Ratings"}
+            </h4>
+            <h4>
+              {skillsData ? skillsData.SKILL2 : "Skill"}:{" "}
+              {skillsData ? skillsData.RATING2 : "Ratings"}
             </h4>
           </div>
         </div>
