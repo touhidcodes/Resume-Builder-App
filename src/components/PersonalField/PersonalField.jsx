@@ -5,6 +5,8 @@ import fieldINC from "../../utilities/INC/INC";
 import { setPersonal, updatePersonal } from "../../Redux/Actions/setPersonal";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import Avatar from "react-avatar-edit";
+import avatar_img from "../../assets/avatar.jpg";
 
 const PersonalField = (props) => {
   const [value, setValues] = useState();
@@ -41,8 +43,26 @@ const PersonalField = (props) => {
   ];
 
   const [selected, setSelected] = useState(false);
+  const [image, setImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
+
+  const onClose = () => {
+    setImage({ preview: null });
+  };
+
+  const onCrop = (preview) => {
+    setImage({ preview });
+    setPreviewImage(preview);
+  };
   return (
     <div>
+      <div>
+        <img
+          src={previewImage ? previewImage : avatar_img}
+          alt=""
+          className="h-32 w-32 rounded-full"
+        />
+      </div>
       <div className="flex flex-row">
         <div
           className={`rounded-full transition duration-500 ease-in-out border-2  h-10 w-10 flex items-center justify-center py-3 ${
@@ -83,11 +103,11 @@ const PersonalField = (props) => {
           </div>
           {/* Image Input  */}
           <div className="border-2 border-dashed mx-10 border-zinc-500 rounded-xl absolute right-10 bottom-5 px-8 py-10">
-            <div>
+            <div className="flex flex-col items-center">
               <h4>Your Photo</h4>
               {/* modal open btn */}
               <button
-                className="btn btn-success btn-sm text-white mt-3"
+                className="btn btn-ghost btn-sm btn-active mt-3"
                 onClick={() =>
                   document.getElementById("upload-img").showModal()
                 }
@@ -95,16 +115,24 @@ const PersonalField = (props) => {
                 Upload
               </button>
               {/* Modal Container */}
-              <dialog id="upload-img" className="modal">
-                <div className="modal-box">
-                  <h3 className="font-bold text-lg">Hello!</h3>
-                  <p className="py-4">
-                    Press ESC key or click the button below to close
-                  </p>
+              <dialog
+                id="upload-img"
+                className="modal modal-bottom sm:modal-middle"
+              >
+                <div className="modal-box flex flex-col items-center">
+                  <h3 className="font-bold text-lg">Crop Your Image</h3>
+                  <Avatar
+                    width={450}
+                    height={295}
+                    onCrop={onCrop}
+                    onClose={onClose}
+                  />
                   <div className="modal-action">
                     <form method="dialog">
                       {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm">Close</button>
+                      <button className="btn btn-ghost btn-sm btn-active">
+                        Submit
+                      </button>
                     </form>
                   </div>
                 </div>
