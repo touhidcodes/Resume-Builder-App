@@ -85,9 +85,30 @@ const PersonalField = (props) => {
           <div className="border-2 border-dashed mx-10 border-zinc-500 rounded-xl absolute right-10 bottom-5 px-8 py-10">
             <div>
               <h4>Your Photo</h4>
-              <button className="btn btn-success btn-sm text-white mt-3">
+              {/* modal open btn */}
+              <button
+                className="btn btn-success btn-sm text-white mt-3"
+                onClick={() =>
+                  document.getElementById("upload-img").showModal()
+                }
+              >
                 Upload
               </button>
+              {/* Modal Container */}
+              <dialog id="upload-img" className="modal">
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">Hello!</h3>
+                  <p className="py-4">
+                    Press ESC key or click the button below to close
+                  </p>
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn btn-sm">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </div>
           </div>
         </div>
