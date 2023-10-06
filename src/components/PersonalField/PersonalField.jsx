@@ -63,22 +63,33 @@ const PersonalField = (props) => {
           selected && "border-blue-600"
         }`}
       >
-        {/* Job Title Input */}
-        <div className="mb-5">
-          <label className="label flex flex-row justify-start">
-            <span className="text-xl">Job Title:</span>
-          </label>
-          <select
-            {...register(`${fieldINC.jobTitle}`, { required: true })}
-            className="pl-1 text-lg outline-none border-b-2"
-            defaultValue=""
-          >
-            {titles.map((title, index) => (
-              <option value={`${title}`} key={index}>
-                {title}
-              </option>
-            ))}
-          </select>
+        <div className="grid grid-cols-2 gap-5 relative">
+          {/* Job Title Input */}
+          <div className="mb-5">
+            <label className="label flex flex-row justify-start">
+              <span className="text-xl">Job Title:</span>
+            </label>
+            <select
+              {...register(`${fieldINC.jobTitle}`, { required: true })}
+              className="pl-1 text-lg outline-none border-b-2"
+              defaultValue=""
+            >
+              {titles.map((title, index) => (
+                <option value={`${title}`} key={index}>
+                  {title}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Image Input  */}
+          <div className="border-2 border-dashed mx-10 border-zinc-500 rounded-xl absolute right-10 bottom-5 px-8 py-10">
+            <div>
+              <h4>Your Photo</h4>
+              <button className="btn btn-success btn-sm text-white mt-3">
+                Upload
+              </button>
+            </div>
+          </div>
         </div>
         <div className="grid grid-cols-2 gap-5">
           {/* First Name Input */}
