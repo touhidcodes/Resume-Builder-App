@@ -58,7 +58,7 @@ const PersonalField = (props) => {
     <div>
       <div>
         <img
-          src=""
+          src={previewImage ? previewImage : avatar_img}
           alt=""
           className="h-32 w-32 rounded-full"
         />
