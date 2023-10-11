@@ -57,11 +57,7 @@ const PersonalField = (props) => {
   return (
     <div>
       <div>
-        <img
-          src={previewImage ? previewImage : avatar_img}
-          alt=""
-          className="h-32 w-32 rounded-full"
-        />
+        <img src={previewImage ? previewImage : avatar_img} alt="" />
       </div>
       <div className="flex flex-row">
         <div
