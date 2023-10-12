@@ -1,6 +1,14 @@
 import React from "react";
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import {
+  Page,
+  Text,
+  View,
+  Document,
+  StyleSheet,
+  Image,
+} from "@react-pdf/renderer";
 import { PDFViewer } from "@react-pdf/renderer";
+import avatar from "../../assets/avatar.jpg";
 
 const Template4 = () => {
   // Create styles
@@ -14,12 +22,27 @@ const Template4 = () => {
       padding: 10,
       flexGrow: 1,
     },
+    image: {
+      height: 100,
+      width: 100,
+      borderRadius: 50,
+    },
   });
 
   return (
     <div>
       <PDFViewer className="h-[700px] w-[550px]" showToolbar={false}>
         <Document>
+          <Page size="A4" style={styles.page}>
+            <View style={styles.section}>
+              <Image src={avatar} style={styles.image} />
+              <Text>1st Section</Text>
+            </View>
+            <View style={styles.section}>
+              <Text>Section #2</Text>
+            </View>
+          </Page>
+          {/* 2nd page show */}
           <Page size="A4" style={styles.page}>
             <View style={styles.section}>
               <Text>Section #1</Text>
