@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Image,
 } from "@react-pdf/renderer";
-import { PDFViewer } from "@react-pdf/renderer";
+import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import avatar from "../../assets/avatar.jpg";
 
 const Template4 = () => {
@@ -36,6 +36,7 @@ const Template4 = () => {
           <Page size="A4" style={styles.page}>
             <View style={styles.section}>
               <Image src={avatar} style={styles.image} />
+              <Text>1st Section</Text>
               <Text>1st Section</Text>
             </View>
             <View style={styles.section}>

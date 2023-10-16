@@ -44,6 +44,7 @@ const ResumeBuilder = (props) => {
             Preview
           </button>
         </div> */}
+
         <div className="p-10 bg-base-200 min-h-screen">
           <div className="download-resume">
             {allData.map((item) => (item.id == resume.id ? item.data : ""))}
