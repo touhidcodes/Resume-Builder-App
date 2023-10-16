@@ -37,7 +37,6 @@ const Template4 = () => {
             <View style={styles.section}>
               <Image src={avatar} style={styles.image} />
               <Text>1st Section</Text>
-              <Text>1st Section</Text>
             </View>
             <View style={styles.section}>
               <Text>Section #2</Text>
