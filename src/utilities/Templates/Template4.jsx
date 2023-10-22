@@ -40,6 +40,8 @@ const Template4 = () => {
             </View>
             <View style={styles.section}>
               <Text>Section #2</Text>
+              <Text>Section #3</Text>
+              <Text>Section #4</Text>
             </View>
           </Page>
           {/* 2nd page show */}
